@@ -1,0 +1,3 @@
+<template>
+  <PortadaInicio />
+</template>
