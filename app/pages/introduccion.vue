@@ -556,7 +556,7 @@ const menuTemas = [
     contenido: 'Los derechos fundamentales son garantías inherentes a toda persona por el solo hecho de ser humana. En Colombia, la Constitución Política de 1991 los consagra en el Título II, Capítulo 1 (artículos 11 al 41), y los eleva a la categoría de normas de aplicación inmediata que vinculan a todas las autoridades del Estado. Su fundamento más profundo es la dignidad humana: nadie puede ser tratado como un medio, sino siempre como un fin en sí mismo. A diferencia de otros derechos, los fundamentales son inalienables (no se pueden transferir), imprescriptibles (no se extinguen con el tiempo) e irrenunciables. La Corte Constitucional colombiana ha ampliado progresivamente su catálogo mediante el principio de conexidad, reconociendo que derechos como la salud o el mínimo vital también son fundamentales cuando su vulneración amenaza directamente la vida digna.',
     importante: 'La dignidad humana, la vida, la igualdad y la libertad son el núcleo esencial del que derivan todos los demás derechos fundamentales consagrados en la Constitución de 1991.',
     puntosClave: ['Aplicación inmediata (Art. 85 C.P.)', 'Inalienables e irrenunciables', 'Protegidos por la Acción de Tutela', 'Catálogo ampliado por jurisprudencia'],
-    video: 'https://www.youtube.com/embed/6MYHBrHS5t4'
+    video: 'https://www.youtube.com/embed/K5W3hYwfNuc'
   },
   {
     id: 2,
@@ -567,7 +567,7 @@ const menuTemas = [
     contenido: 'Los derechos de primera generación nacieron de las grandes revoluciones liberales del siglo XVIII (Revolución Francesa y Americana) y buscan proteger al individuo frente a los abusos del poder estatal. Su lógica es de abstención: el Estado no debe interferir en la esfera privada del ciudadano. En Colombia, la Constitución de 1991 los recoge de forma exhaustiva: el derecho a la vida e integridad personal (Art. 11-12), la prohibición de la tortura y la esclavitud (Art. 12-17), la libertad de conciencia y de culto (Art. 18-19), la libertad de expresión e información (Art. 20), el derecho de reunión y asociación (Art. 37-38), el debido proceso (Art. 29), y los derechos políticos como el sufragio universal y el acceso a cargos públicos (Art. 40). Estos derechos son de aplicación inmediata y pueden defenderse directamente mediante la Acción de Tutela cuando el Estado o un particular con posición de dominio los vulnera.',
     importante: 'En Colombia, entre los Arts. 11 y 41 de la Constitución se consagran los derechos civiles y políticos. El derecho a la vida es el más fundamental de todos: sin él, los demás carecen de sentido.',
     puntosClave: ['Derecho a la vida (Art. 11)', 'Libertad de expresión (Art. 20)', 'Debido proceso (Art. 29)', 'Derecho al voto (Art. 40)'],
-    video: 'https://www.youtube.com/embed/o7YgKLNvBFw'
+    video: 'https://www.youtube.com/embed/12hWT4U69yU'
   },
   {
     id: 3,
@@ -578,7 +578,7 @@ const menuTemas = [
     contenido: 'Los derechos de segunda generación —también conocidos como DESC (Derechos Económicos, Sociales y Culturales)— surgieron como respuesta a las profundas desigualdades generadas por la Revolución Industrial. A diferencia de los de primera generación, exigen una conducta activa y prestacional del Estado: este debe invertir recursos, crear instituciones y garantizar condiciones materiales mínimas de vida. En la Constitución colombiana de 1991, se ubican principalmente en el Capítulo 2 del Título II (Arts. 42 al 77) y comprenden: el derecho al trabajo en condiciones dignas (Art. 25), la seguridad social (Art. 48), el derecho a la salud (Art. 49), la educación gratuita hasta el noveno grado (Art. 67), y el derecho a la vivienda digna (Art. 51). La Corte Constitucional ha reconocido que estos derechos son justiciables cuando su núcleo esencial está amenazado, especialmente en el caso de niños, adultos mayores y personas en situación de vulnerabilidad.',
     importante: 'La Corte Constitucional ha protegido mediante tutela el derecho a la salud (Art. 49) y a la seguridad social (Art. 48) cuando su negación constituye una amenaza inminente para la vida o la dignidad humana.',
     puntosClave: ['Trabajo digno (Art. 25)', 'Salud y seguridad social (Arts. 48-49)', 'Educación gratuita (Art. 67)', 'Vivienda digna (Art. 51)'],
-    video: 'https://www.youtube.com/embed/GdE3cjQJNdE'
+    video: 'https://www.youtube.com/embed/IY6yYklnI7Y'
   },
   {
     id: 4,
@@ -589,7 +589,7 @@ const menuTemas = [
     contenido: 'Los derechos de tercera generación emergen en la segunda mitad del siglo XX como respuesta a problemáticas que ningún individuo ni Estado puede resolver por sí solo: la crisis ambiental, los conflictos bélicos globales y la desigualdad entre naciones. Su principio rector es la solidaridad: obligan tanto a los Estados como a las empresas, las organizaciones internacionales y a cada ciudadano. En Colombia, el Capítulo 3 del Título II (Arts. 78 al 82) consagra los derechos colectivos y del ambiente: el derecho a un ambiente sano (Art. 79), el deber del Estado de prevenir el deterioro ambiental (Art. 80), y la protección de los consumidores (Art. 78). La Corte Constitucional ha reconocido además el derecho a la paz (Art. 22) como un derecho y un deber ciudadano de obligatorio cumplimiento. Las Acciones Populares y de Grupo son los mecanismos judiciales diseñados para proteger estos derechos colectivos.',
     importante: 'El Acuerdo de Paris (2015) y la jurisprudencia de la Corte Suprema colombiana (STC4360-2018) reconocieron a la Amazonía colombiana como "sujeto de derechos", ampliando la protección ambiental de tercera generación.',
     puntosClave: ['Derecho al ambiente sano (Art. 79)', 'Derecho a la paz (Art. 22)', 'Protección del consumidor (Art. 78)', 'Acciones Populares como mecanismo de defensa'],
-    video: 'https://www.youtube.com/embed/yiw6_JakZFc'
+    video: 'https://www.youtube.com/embed/AQ2GvHg0icg'
   },
   {
     id: 5,
@@ -600,7 +600,7 @@ const menuTemas = [
     contenido: 'La Constitución de 1991 diseñó un robusto sistema de garantías judiciales para que los derechos no sean simples declaraciones. El más importante es la Acción de Tutela (Art. 86): cualquier persona puede acudir ante cualquier juez de la República, sin necesidad de abogado, para solicitar la protección inmediata de un derecho fundamental. El juez tiene máximo 10 días para fallar. El Habeas Corpus (Art. 30) protege la libertad personal ante detenciones arbitrarias y debe resolverse en 36 horas. El Habeas Data (Art. 15) garantiza el derecho a controlar la información personal en bases de datos. Las Acciones Populares (Art. 88) defienden derechos e intereses colectivos como el ambiente sano y el espacio público. Finalmente, la Acción de Cumplimiento (Art. 87) obliga a las autoridades a ejecutar leyes o actos administrativos que incumplan. Conocer estos mecanismos es esencial para ejercer una ciudadanía activa.',
     importante: 'La Acción de Tutela es el mecanismo más utilizado en Colombia: solo en 2023 se presentaron más de 1.400.000 tutelas, lo que la convierte en una de las herramientas de democracia directa más activas del mundo.',
     puntosClave: ['Acción de Tutela (Art. 86) — 10 días', 'Habeas Corpus (Art. 30) — 36 horas', 'Habeas Data (Art. 15)', 'Acciones Populares (Art. 88)'],
-    video: 'https://www.youtube.com/embed/8FBMz6fAeGY'
+    video: 'https://www.youtube.com/embed/hp8hqeWI8dE'
   }
 ]
 

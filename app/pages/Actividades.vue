@@ -116,14 +116,42 @@
 </template>
 
 <script setup>
-import { useState } from '#imports'
+import { onMounted, watch } from 'vue'
 
 const actividadesDesbloqueadas = useState('actividadesDesbloqueadas', () => false)
 const progresoActividades = useState('progresoActividades', () => 0)
 
+// ---- Sincronización con localStorage ----
+onMounted(() => {
+  const saved = localStorage.getItem('ovaProgress')
+  if (saved) {
+    try {
+      const data = JSON.parse(saved)
+      if (data.actDesbloqueadas !== undefined) actividadesDesbloqueadas.value = data.actDesbloqueadas
+      if (data.progresoAct !== undefined) progresoActividades.value = data.progresoAct
+    } catch (e) { /* ignore */ }
+  }
+})
+
+const saveProgress = () => {
+  const saved = localStorage.getItem('ovaProgress')
+  let data = {}
+  if (saved) {
+    try {
+      data = JSON.parse(saved)
+    } catch (e) { /* ignore */ }
+  }
+  data.actDesbloqueadas = actividadesDesbloqueadas.value
+  data.progresoAct = progresoActividades.value
+  localStorage.setItem('ovaProgress', JSON.stringify(data))
+}
+
+watch([actividadesDesbloqueadas, progresoActividades], saveProgress, { deep: true })
+
 const completarActividad = (index) => {
   if (index === progresoActividades.value) {
     progresoActividades.value++
+    saveProgress()
   }
 }
 

@@ -15,9 +15,9 @@
         <span class="brand-text">Constitución Interactiva</span>
       </div>
       <div class="nav-links">
-        <a href="/introduccion" class="nav-link">Temario</a>
-        <a href="/Actividades" class="nav-link">Actividades</a>
-        <a href="/Creditos" class="nav-link nav-link-outlined">Créditos</a>
+        <NuxtLink to="/introduccion" class="nav-link">Temario</NuxtLink>
+        <NuxtLink to="/Actividades" class="nav-link">Actividades</NuxtLink>
+        <NuxtLink to="/Creditos" class="nav-link nav-link-outlined">Créditos</NuxtLink>
       </div>
     </nav>
 
@@ -74,11 +74,11 @@
       </div>
 
       <!-- Botón CTA -->
-      <a href="/introduccion" class="cta-btn animate-bounce-in">
+      <NuxtLink to="/introduccion" class="cta-btn animate-bounce-in">
         <v-icon size="22" class="mr-2">mdi-book-open-page-variant</v-icon>
         Iniciar Aprendizaje
         <v-icon size="22" class="ml-2">mdi-arrow-right</v-icon>
-      </a>
+      </NuxtLink>
 
       <!-- Scroll indicator -->
       <div class="scroll-indicator">
@@ -100,26 +100,26 @@
       </div>
       
       <div class="shortcuts-list">
-        <a href="/introduccion#vida" class="shortcut-item" title="Derecho a la Vida">
+        <NuxtLink to="/introduccion#vida" class="shortcut-item" title="Derecho a la Vida">
           <v-icon color="gold">mdi-heart-pulse</v-icon>
           <span>Vida</span>
-        </a>
-        <a href="/introduccion#expresion" class="shortcut-item" title="Libertad de Expresión">
+        </NuxtLink>
+        <NuxtLink to="/introduccion#expresion" class="shortcut-item" title="Libertad de Expresión">
           <v-icon color="gold">mdi-bullhorn</v-icon>
           <span>Expresión</span>
-        </a>
-        <a href="/introduccion#educacion" class="shortcut-item" title="Educación">
+        </NuxtLink>
+        <NuxtLink to="/introduccion#educacion" class="shortcut-item" title="Educación">
           <v-icon color="gold">mdi-school</v-icon>
           <span>Educación</span>
-        </a>
-        <a href="/introduccion#trabajo" class="shortcut-item" title="Trabajo">
+        </NuxtLink>
+        <NuxtLink to="/introduccion#trabajo" class="shortcut-item" title="Trabajo">
           <v-icon color="gold">mdi-hammer-screwdriver</v-icon>
           <span>Trabajo</span>
-        </a>
-        <a href="/introduccion#paz" class="shortcut-item" title="Paz">
+        </NuxtLink>
+        <NuxtLink to="/introduccion#paz" class="shortcut-item" title="Paz">
           <v-icon color="gold">mdi-dove</v-icon>
           <span>Paz</span>
-        </a>
+        </NuxtLink>
         <a href="https://www.mininterior.gov.co/direccion-de-derechos-humanos/derechos-fundamentales/" target="_blank" class="shortcut-item" title="Ministerio del Interior">
           <v-icon color="gold">mdi-book-information-variant</v-icon>
           <span>Oficial</span>
@@ -163,9 +163,9 @@
             <img :src="tema.imagen" :alt="tema.titulo" class="tema-image" @error="handleImageError">
           </div>
           
-          <a :href="'/introduccion#tema-' + (index + 1)" class="tema-link" :class="{ 'disabled': index > maxTemaDesbloqueado - 1 }">
+          <NuxtLink :to="'/introduccion#tema-' + (index + 1)" class="tema-link" :class="{ 'disabled': index > maxTemaDesbloqueado - 1 }">
             Explorar <v-icon size="16" class="ml-1">mdi-arrow-right</v-icon>
-          </a>
+          </NuxtLink>
         </div>
       </div>
     </div>
@@ -173,9 +173,19 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
 const maxTemaDesbloqueado = useState('maxTemaDesbloqueado', () => 1)
+
+onMounted(() => {
+  const saved = localStorage.getItem('ovaProgress')
+  if (saved) {
+    try {
+      const data = JSON.parse(saved)
+      if (data.maxTema) maxTemaDesbloqueado.value = data.maxTema
+    } catch (e) { /* ignore */ }
+  }
+})
 
 const getParticleStyle = (n) => {
   const size = Math.random() * 6 + 2

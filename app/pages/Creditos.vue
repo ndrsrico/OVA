@@ -72,28 +72,28 @@
 <script setup>
 const team = [
   {
-    name: 'Andrés',
-    role: 'Director del Proyecto & UI/UX',
-    description: 'Encargado de la visión general del OVA, diseño de interfaces, animaciones y la experiencia de usuario inmersiva.',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80'
-  },
-  {
-    name: 'Valentina R.',
-    role: 'Investigadora Jurídica',
-    description: 'Especialista en derecho constitucional. Encargada de la curaduría de la información y la redacción de los artículos.',
-    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80'
-  },
-  {
-    name: 'Carlos M.',
+    name: 'Esteban Marquez',
     role: 'Desarrollador Frontend',
-    description: 'Implementación técnica en Nuxt.js, integración de lógicas de progresión y componentes interactivos.',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80'
+    avatar: '/images/avatar_esteban.jpg',
+    description: 'Desarrollo frontend, integración de componentes interactivos con Nuxt y Vuetify.'
   },
   {
-    name: 'Laura G.',
-    role: 'Diseñadora Instruccional',
-    description: 'Diseñó las estrategias pedagógicas y seleccionó las dinámicas interactivas para evaluar el conocimiento.',
-    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=300&q=80'
+    name: 'Andrés Rico',
+    role: 'Director del Proyecto & UI/UX',
+    avatar: '/images/avatar_andres.jpg',
+    description: 'Dirección de arte, diseño de interfaz (UI/UX) y estructura general de la OVA.'
+  },
+  {
+    name: 'Sebastian Schortborgh',
+    role: 'Investigador Jurídico',
+    avatar: '/images/avatar_sebastian.jpg',
+    description: 'Investigación jurídica, redacción y curaduría de contenidos constitucionales.'
+  },
+  {
+    name: 'Brayan Vergara',
+    role: 'Diseñador Instruccional', 
+    avatar: '/images/avatar_brayan.jpg',
+    description: 'Diseño instruccional, pedagogía y secuenciación de actividades de aprendizaje.'
   }
 ]
 </script>
