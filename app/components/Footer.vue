@@ -62,7 +62,7 @@
           <h4 class="font-serif text-subtitle-1 text-gold mb-6">Enlaces Rápidos</h4>
           <div class="quick-links">
             <v-btn
-              to="/"
+              to="/Welcome"
               variant="text"
               color="grey-lighten-2"
               size="small"
@@ -72,7 +72,7 @@
               Inicio
             </v-btn>
             <v-btn
-              to="/introduccion"
+              to="/Temario"
               variant="text"
               color="grey-lighten-2"
               size="small"
@@ -80,6 +80,26 @@
               prepend-icon="mdi-book-open-variant"
             >
               Temario
+            </v-btn>
+            <v-btn
+              to="/Evaluacion"
+              variant="text"
+              color="grey-lighten-2"
+              size="small"
+              class="footer-link mb-2"
+              prepend-icon="mdi-pencil-box-outline"
+            >
+              Evaluación
+            </v-btn>
+            <v-btn
+              to="/Recursos"
+              variant="text"
+              color="grey-lighten-2"
+              size="small"
+              class="footer-link mb-2"
+              prepend-icon="mdi-link-variant"
+            >
+              Recursos
             </v-btn>
             <v-btn
               to="/Actividades"
