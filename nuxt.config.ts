@@ -14,6 +14,7 @@ export default defineNuxtConfig({
 
   // 4. Nitro configuration for Vercel
   nitro: {
+    preset: 'vercel',
     prerender: {
       crawlLinks: true,
       routes: ['/', '/Temario', '/Evaluacion', '/Recursos', '/Welcome', '/Actividades', '/Creditos'],
