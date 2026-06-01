@@ -15,11 +15,11 @@
         <span class="brand-text">Constitución Interactiva</span>
       </div>
       <div class="nav-links">
-        <NuxtLink to="/Temario" class="nav-link">Temario</NuxtLink>
-        <NuxtLink to="/Actividades" class="nav-link">Actividades</NuxtLink>
-        <NuxtLink to="/Evaluacion" class="nav-link">Evaluación</NuxtLink>
-        <NuxtLink to="/Recursos" class="nav-link">Recursos</NuxtLink>
-        <NuxtLink to="/Creditos" class="nav-link nav-link-outlined">Créditos</NuxtLink>
+        <NuxtLink to="/Temario" class="nav-link"><v-icon size="18" class="mr-2">mdi-book-open-page-variant</v-icon>Temario</NuxtLink>
+        <NuxtLink to="/Actividades" class="nav-link"><v-icon size="18" class="mr-2">mdi-controller-classic</v-icon>Actividades</NuxtLink>
+        <NuxtLink to="/Evaluacion" class="nav-link"><v-icon size="18" class="mr-2">mdi-clipboard-text</v-icon>Evaluación</NuxtLink>
+        <NuxtLink to="/Recursos" class="nav-link"><v-icon size="18" class="mr-2">mdi-folder-multiple</v-icon>Recursos</NuxtLink>
+        <NuxtLink to="/Creditos" class="nav-link nav-link-outlined"><v-icon size="16" class="mr-2">mdi-account-group</v-icon>Créditos</NuxtLink>
       </div>
     </nav>
 
@@ -91,6 +91,50 @@
     <!-- Imagen de fondo con parallax -->
     <div class="hero-bg-image"></div>
   </div>
+
+  <section class="landing-sections">
+    <div class="landing-sections-header">
+      <h2>Recorrido Secuencial</h2>
+      <p>Todos los apartados del OVA aparecen de forma clara y en orden para facilitar tu navegación.</p>
+    </div>
+
+    <div class="sections-grid">
+      <div class="section-card">
+        <span class="section-step">1</span>
+        <v-icon color="gold" size="28" class="section-icon">mdi-book-open-page-variant</v-icon>
+        <h3>Temario</h3>
+        <p>Accede rápidamente a los temas principales y aprende sobre tus derechos.</p>
+        <NuxtLink to="/Temario" class="section-btn">Ir a Temario</NuxtLink>
+      </div>
+      <div class="section-card">
+        <span class="section-step">2</span>
+        <v-icon color="gold" size="28" class="section-icon">mdi-controller-classic</v-icon>
+        <h3>Actividades</h3>
+        <p>Ejercita tu comprensión con actividades prácticas y retroalimenta tu progreso.</p>
+        <NuxtLink to="/Actividades" class="section-btn">Ir a Actividades</NuxtLink>
+      </div>
+      <div class="section-card">
+        <span class="section-step">3</span>
+        <v-icon color="gold" size="28" class="section-icon">mdi-clipboard-text</v-icon>
+        <h3>Evaluación</h3>
+        <p>Responde preguntas del OVA para obtener tu puntuación y calificación final.</p>
+        <NuxtLink to="/Evaluacion" class="section-btn">Ir a Evaluación</NuxtLink>
+      </div>
+      <div class="section-card">
+        <span class="section-step">4</span>
+        <v-icon color="gold" size="28" class="section-icon">mdi-folder-multiple</v-icon>
+        <h3>Recursos</h3>
+        <p>Consulta documentos y enlaces importantes para profundizar en tus estudios.</p>
+        <NuxtLink to="/Recursos" class="section-btn">Ir a Recursos</NuxtLink>
+      </div>
+      <div class="section-card">
+        <span class="section-step">5</span>
+        <h3>Créditos</h3>
+        <p>Conoce a quiénes hicieron posible este objeto virtual de aprendizaje.</p>
+        <NuxtLink to="/Creditos" class="section-btn">Ver Créditos</NuxtLink>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script setup>
@@ -541,4 +585,188 @@ const getParticleStyle = (n) => {
     display: none;
   }
 }
+
+/* ========== SECCIÓN DE RECORRIDO SECUENCIAL ========== */
+.landing-sections {
+  background: linear-gradient(180deg, #050505 0%, #120e0a 100%);
+  border-top: 1px solid rgba(212, 175, 55, 0.15);
+  padding: 100px 48px 120px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.landing-sections::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(212, 175, 55, 0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.landing-sections-header {
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 700px;
+}
+
+.landing-sections-header h2 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #D4AF37;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+  margin-bottom: 16px;
+}
+
+.landing-sections-header p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.sections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 28px;
+  width: 100%;
+  max-width: 1300px;
+}
+
+.section-card {
+  background: rgba(30, 30, 30, 0.55);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 24px;
+  padding: 32px 24px 28px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+}
+
+.section-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 120%, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.section-card:hover::before {
+  opacity: 1;
+}
+
+.section-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(212, 175, 55, 0.5);
+  background: rgba(40, 40, 40, 0.85);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(212, 175, 55, 0.2);
+}
+
+.section-step {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #D4AF37;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.section-icon {
+  margin-top: 8px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.4));
+  transition: transform 0.3s ease;
+}
+
+.section-card:hover .section-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.section-card h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.25rem;
+  color: white;
+  margin-bottom: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.section-card p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.section-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  color: #D4AF37;
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 24px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.section-card:hover .section-btn {
+  background: linear-gradient(135deg, #D4AF37 0%, #F2D479 100%);
+  color: #1a1100;
+  border-color: transparent;
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.35);
+}
+
+@media (max-width: 1024px) {
+  .landing-sections {
+    padding: 80px 32px 100px;
+  }
+  .sections-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .landing-sections {
+    padding: 60px 20px 80px;
+  }
+  .sections-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .landing-sections-header {
+    margin-bottom: 40px;
+  }
+}
 </style>
+

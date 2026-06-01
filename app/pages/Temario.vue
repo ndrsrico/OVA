@@ -1,41 +1,12 @@
 <template>
   <v-app>
-    <v-app-bar app color="rgba(20, 20, 20, 0.85)" class="glass-header" theme="dark" elevation="0">
-      <v-app-bar-nav-icon @click="drawer = !drawer" color="gold"></v-app-bar-nav-icon>
-      <v-toolbar-title class="font-serif text-gold">Temario - Derechos Fundamentales</v-toolbar-title>
+    <v-app-bar app color="rgba(20, 20, 20, 0.8)" class="glass-header" theme="dark" elevation="0">
+      <v-toolbar-title class="font-serif text-gold ml-4">Temario - Derechos Fundamentales</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn variant="text" color="white" to="/Welcome" prepend-icon="mdi-home" class="mr-2 hidden-sm-and-down">Inicio</v-btn>
-      <v-btn variant="text" color="gold" to="/introduccion" prepend-icon="mdi-book-open-variant" class="mr-2 hidden-sm-and-down">Leer Temario</v-btn>
+      <v-btn variant="text" color="white" to="/" prepend-icon="mdi-home" class="mr-2 hidden-sm-and-down">Inicio</v-btn>
+      <v-btn variant="text" color="gold" to="/Temario" prepend-icon="mdi-book-open-variant" class="mr-2 hidden-sm-and-down">Temario</v-btn>
       <v-btn variant="outlined" color="white" to="/Creditos" prepend-icon="mdi-account-group" class="mr-4">Créditos</v-btn>
     </v-app-bar>
-
-    <v-navigation-drawer v-model="drawer" app theme="dark" width="320" class="sidebar-glass">
-      <div class="sidebar-header pa-5">
-        <div class="d-flex align-center mb-3">
-          <v-icon color="gold" size="28" class="mr-3">mdi-book-multiple</v-icon>
-          <div>
-            <div class="font-serif text-gold" style="font-size:0.9rem;letter-spacing:1px;">TEMARIO</div>
-            <div class="text-caption text-grey-lighten-1">5 Temas</div>
-          </div>
-        </div>
-        <div class="progress-section mt-4">
-          <div class="d-flex justify-space-between align-center mb-2">
-            <span class="text-caption text-grey-lighten-1">Progreso General</span>
-            <span class="text-caption text-gold font-weight-bold">{{ Math.round(((maxTemaDesbloqueado - 1) / temasData.length) * 100) }}%</span>
-          </div>
-          <div class="progress-track">
-            <div class="progress-fill" :style="{ width: ((maxTemaDesbloqueado - 1) / temasData.length * 100) + '%' }"></div>
-          </div>
-          <div class="text-caption text-grey mt-1">{{ maxTemaDesbloqueado - 1 }} de {{ temasData.length }} completados</div>
-        </div>
-      </div>
-      <v-divider class="border-opacity-25"></v-divider>
-      <template v-slot:append>
-        <div class="pa-4">
-          <v-btn block variant="tonal" color="white" to="/Welcome" prepend-icon="mdi-home" class="rounded-pill">Ir a Inicio</v-btn>
-        </div>
-      </template>
-    </v-navigation-drawer>
 
     <v-main class="dynamic-bg position-relative overflow-hidden">
       <div class="floating-shapes">
@@ -46,56 +17,89 @@
         <div class="shape shape-5"></div>
       </div>
 
-      <v-container fluid class="pa-8 position-relative z-1">
+      <v-container class="py-12 px-6 position-relative z-1">
         <v-row class="mb-8">
-          <v-col cols="12" md="8" class="mx-auto text-center">
-            <h1 class="text-h3 font-serif text-white mb-4 slide-fade-in text-glow">TEMARIO INTERACTIVO</h1>
-            <p class="text-subtitle-1 font-serif-italic text-grey-lighten-2 slide-fade-in-delayed">
-              Explora los derechos fundamentales que protegen tu libertad y dignidad. Haz clic en cada tema para aprender más.
-            </p>
-            <v-divider class="mt-6 border-opacity-50" color="gold"></v-divider>
+          <v-col cols="12" md="10" class="mx-auto">
+            <div class="text-center mb-8">
+              <h1 class="text-h3 font-serif text-white mb-4 slide-fade-in text-glow">ESTRUCTURA CURRICULAR</h1>
+              <p class="text-subtitle-1 font-serif-italic text-grey-lighten-2 slide-fade-in-delayed mb-6">
+                Completa cada tema en orden para desbloquear el siguiente.
+              </p>
+            </div>
+
+            <div class="progress-section mb-8 pa-6 rounded-xl" style="background: rgba(212,175,55,0.08); border: 2px solid rgba(212,175,55,0.3);">
+              <div class="d-flex justify-space-between align-center mb-3">
+                <span class="text-body-1 font-weight-bold text-white">Progreso:</span>
+                <span class="text-body-2 text-gold font-weight-bold">{{ maxTemaDesbloqueado - 1 }} / {{ temasData.length }} completados</span>
+              </div>
+              <v-progress-linear
+                :value="((maxTemaDesbloqueado - 1) / temasData.length) * 100"
+                color="success"
+                background-color="rgba(255,255,255,0.1)"
+                height="24"
+                rounded
+              ></v-progress-linear>
+            </div>
+
+            <v-divider class="mb-8 border-opacity-50" color="gold"></v-divider>
           </v-col>
         </v-row>
 
         <v-row justify="center">
-          <v-col v-for="(tema, index) in temasData" :key="index" cols="12" sm="6" md="4">
-            <v-card 
-              elevation="0" 
-              class="rounded-xl h-100 d-flex flex-column hover-card card-animation glass-card"
-              :class="{ 'locked-card': index > maxTemaDesbloqueado - 1 }"
-              :style="{ animationDelay: `${index * 0.2}s` }"
+          <v-col v-for="(tema, index) in temasData" :key="tema.titulo" cols="12" sm="6" md="4">
+            <v-card
+              elevation="0"
+              class="rounded-xl h-100 d-flex flex-column card-animation tema-card"
+              :class="{
+                'tema-locked': index + 1 > maxTemaDesbloqueado,
+                'tema-completed': index + 1 < maxTemaDesbloqueado,
+                'tema-active': index + 1 === maxTemaDesbloqueado
+              }"
+              :style="{ animationDelay: (index * 0.15) + 's' }"
             >
-              <div :class="['pa-6 text-center text-white font-weight-bold d-flex flex-column align-center justify-center position-relative border-b', { 'header-completed': index < maxTemaDesbloqueado - 1, 'header-active': index === maxTemaDesbloqueado - 1, 'header-locked': index > maxTemaDesbloqueado - 1 }]">
-                <div class="tema-number">{{ String(index + 1).padStart(2, '0') }}</div>
-                <v-icon v-if="index > maxTemaDesbloqueado - 1" size="48" class="mb-2 position-absolute" style="opacity: 0.3;">mdi-lock</v-icon>
-                <v-icon v-else size="48" class="mb-2" :style="{ opacity: index > maxTemaDesbloqueado - 1 ? '0.2' : '1' }" color="gold">{{ tema.icon }}</v-icon>
-                <div v-if="index < maxTemaDesbloqueado - 1" class="badge-completed">✓ Completado</div>
-                <div v-else-if="index === maxTemaDesbloqueado - 1" class="badge-active">EN PROGRESO</div>
-                <div v-else class="badge-locked">🔒 Bloqueado</div>
+              <div
+                class="state-indicator pa-5 text-center"
+                :class="{
+                  'state-locked': index + 1 > maxTemaDesbloqueado,
+                  'state-completed': index + 1 < maxTemaDesbloqueado,
+                  'state-active': index + 1 === maxTemaDesbloqueado
+                }"
+              >
+                <v-icon
+                  size="32"
+                  :color="index + 1 < maxTemaDesbloqueado ? 'success' : (index + 1 === maxTemaDesbloqueado ? 'warning' : 'grey')"
+                  class="mb-2"
+                >
+                  {{ index + 1 < maxTemaDesbloqueado ? 'mdi-check-circle' : (index + 1 === maxTemaDesbloqueado ? tema.icon : 'mdi-lock-outline') }}
+                </v-icon>
+                <div class="tema-badge">
+                  {{ index + 1 < maxTemaDesbloqueado ? 'COMPLETADO' : (index + 1 === maxTemaDesbloqueado ? 'EN PROGRESO' : 'BLOQUEADO') }}
+                </div>
               </div>
 
-              <v-card-text class="pa-6 flex-grow-1 text-white">
-                <h3 class="text-h5 font-serif text-gold mb-3 line-clamp-2">
-                  {{ tema.titulo }}
-                </h3>
-                <p class="text-body-2 text-justify text-grey-lighten-2 mb-4" style="line-height: 1.6;">
-                  {{ tema.descripcion }}
-                </p>
+              <v-card-text class="flex-grow-1 text-center pa-6">
+                <h3 class="tema-title text-h6 mb-3">{{ tema.titulo }}</h3>
+                <p class="text-body-2 text-grey-lighten-2">{{ tema.descripcion }}</p>
               </v-card-text>
 
-              <v-divider class="border-opacity-50" color="white"></v-divider>
-
-              <v-card-actions class="pa-6 bg-transparent">
-                <v-btn 
-                  block
-                  size="large"
-                  color="gold-btn"
-                  class="font-weight-bold dynamic-btn"
-                  to="/introduccion"
-                  append-icon="mdi-arrow-right"
-                  :disabled="index > maxTemaDesbloqueado - 1"
+              <v-card-actions class="justify-center pa-4 border-top" style="border-color: rgba(212,175,55,0.2);">
+                <v-btn
+                  v-if="index + 1 <= maxTemaDesbloqueado"
+                  :color="index + 1 < maxTemaDesbloqueado ? 'success' : 'warning'"
+                  variant="flat"
+                  :to="'/introduccion#tema-' + (index + 1)"
+                  class="font-weight-bold text-uppercase"
                 >
-                  Explorar Tema
+                  {{ index + 1 < maxTemaDesbloqueado ? 'Revisar' : 'Continuar' }}
+                </v-btn>
+                <v-btn
+                  v-else
+                  color="grey"
+                  variant="outlined"
+                  disabled
+                  class="font-weight-bold text-uppercase"
+                >
+                  Bloqueado
                 </v-btn>
               </v-card-actions>
             </v-card>
@@ -107,9 +111,8 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from 'vue'
+import { onMounted } from 'vue'
 
-const drawer = ref(false)
 const maxTemaDesbloqueado = useState('maxTemaDesbloqueado', () => 1)
 
 const temasData = [
@@ -125,17 +128,17 @@ const temasData = [
   },
   {
     titulo: 'Derechos de 2ª Generación',
-    descripcion: 'Igualdad de oportunidades y justicia social integral',
+    descripcion: 'Igualdad de oportunidades y justicia social',
     icon: 'mdi-scale-balance'
   },
   {
     titulo: 'Derechos de 3ª Generación',
-    descripcion: 'Solidaridad, paz y medio ambiente sano colectivo',
+    descripcion: 'Solidaridad, paz y medio ambiente sano',
     icon: 'mdi-dove'
   },
   {
     titulo: 'Garantías y Tutela',
-    descripcion: 'Mecanismos para defender tus derechos de forma inmediata',
+    descripcion: 'Mecanismos para defender tus derechos',
     icon: 'mdi-gavel'
   }
 ]
@@ -145,8 +148,12 @@ onMounted(() => {
   if (saved) {
     try {
       const data = JSON.parse(saved)
-      if (data.maxTema) maxTemaDesbloqueado.value = data.maxTema
-    } catch (e) { /* ignore */ }
+      if (data.maxTema) {
+        maxTemaDesbloqueado.value = data.maxTema
+      }
+    } catch (e) {
+      // ignore parse error
+    }
   }
 })
 </script>
@@ -154,28 +161,17 @@ onMounted(() => {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 
-.sidebar-glass {
-  background: rgba(20, 20, 20, 0.8) !important;
-  backdrop-filter: blur(10px);
+.font-serif {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.05em;
 }
 
-.sidebar-header {
-  background: rgba(212, 175, 55, 0.05);
+.text-gold {
+  color: #D4AF37;
 }
 
-.progress-track {
-  width: 100%;
-  height: 4px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.progress-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #D4AF37, #F0E68C);
-  transition: width 0.5s ease;
-  border-radius: 10px;
+.text-glow {
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
 }
 
 .dynamic-bg {
@@ -210,67 +206,78 @@ onMounted(() => {
   50% { transform: translateY(-30px) translateX(20px); }
 }
 
-.glass-card {
+.tema-card {
   background: rgba(30, 30, 30, 0.6) !important;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(212, 175, 55, 0.2);
   transition: all 0.3s ease;
 }
 
-.glass-card:hover:not(.locked-card) {
+.tema-card:hover:not(.tema-locked) {
   transform: translateY(-8px);
   border-color: rgba(212, 175, 55, 0.5);
   background: rgba(30, 30, 30, 0.8) !important;
 }
 
-.locked-card {
+.tema-locked {
+  background: rgba(50, 50, 50, 0.8) !important;
+  border: 2px solid rgba(153, 153, 153, 0.3) !important;
   opacity: 0.6;
 }
 
-.header-completed {
-  background: linear-gradient(135deg, rgba(76, 175, 80, 0.2), rgba(56, 142, 60, 0.1));
+.tema-completed {
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.15), rgba(56, 142, 60, 0.1)) !important;
+  border: 2px solid rgba(76, 175, 80, 0.4) !important;
 }
 
-.header-active {
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.1));
+.tema-active {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.08)) !important;
+  border: 2px solid rgba(212, 175, 55, 0.5) !important;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
 }
 
-.header-locked {
-  background: linear-gradient(135deg, rgba(128, 128, 128, 0.2), rgba(128, 128, 128, 0.1));
+.state-indicator {
+  position: relative;
+  z-index: 2;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
 
-.tema-number {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #D4AF37;
-  font-family: 'Cinzel', serif;
-  margin-bottom: 8px;
+.state-locked {
+  background: rgba(100, 100, 100, 0.1);
 }
 
-.badge-completed,
-.badge-active,
-.badge-locked {
+.state-completed {
+  background: rgba(76, 175, 80, 0.1);
+}
+
+.state-active {
+  background: rgba(212, 175, 55, 0.1);
+}
+
+.tema-badge {
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-top: 8px;
+  color: rgba(255, 255, 255, 0.7);
 }
 
-.badge-completed {
-  color: #4CAF50;
-}
-
-.badge-active {
+.tema-title {
   color: #D4AF37;
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
 }
 
-.badge-locked {
-  color: #999;
+.glass-header {
+  background: rgba(20, 20, 20, 0.8) !important;
+  backdrop-filter: blur(10px);
 }
 
-.text-glow {
-  text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+.progress-section {
+  border-radius: 12px;
+  background: rgba(212, 175, 55, 0.08) !important;
+  border: 2px solid rgba(212, 175, 55, 0.3) !important;
 }
 
 @keyframes slide-fade-in {
@@ -289,18 +296,10 @@ onMounted(() => {
 }
 
 .slide-fade-in-delayed {
-  animation: slide-fade-in 0.6s ease-out;
-  animation-delay: 0.2s;
-  opacity: 0;
-  animation-fill-mode: forwards;
+  animation: slide-fade-in 0.6s ease-out 0.2s both;
 }
 
-.card-animation {
-  animation: cardBounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-  animation-fill-mode: both;
-}
-
-@keyframes cardBounce {
+@keyframes cardAnimation {
   from {
     opacity: 0;
     transform: translateY(20px) scale(0.9);
@@ -309,6 +308,11 @@ onMounted(() => {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
+}
+
+.card-animation {
+  animation: cardAnimation 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation-fill-mode: both;
 }
 
 @media (max-width: 768px) {

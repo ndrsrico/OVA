@@ -62,7 +62,7 @@
           <h4 class="font-serif text-subtitle-1 text-gold mb-6">Enlaces Rápidos</h4>
           <div class="quick-links">
             <v-btn
-              to="/Welcome"
+              to="/"
               variant="text"
               color="grey-lighten-2"
               size="small"

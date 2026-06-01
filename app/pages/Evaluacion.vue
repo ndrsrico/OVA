@@ -1,9 +1,9 @@
 <template>
   <v-app>
     <v-app-bar app color="rgba(20, 20, 20, 0.85)" class="glass-header" theme="dark" elevation="0">
-      <v-toolbar-title class="font-serif text-gold">Evaluación General - Derechos Fundamentales</v-toolbar-title>
+      <v-toolbar-title class="font-serif text-gold"><v-icon class="mr-3">mdi-clipboard-text</v-icon>Evaluación General - Derechos Fundamentales</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn variant="text" color="white" to="/Welcome" prepend-icon="mdi-home" class="mr-2 hidden-sm-and-down">Inicio</v-btn>
+      <v-btn variant="text" color="white" to="/" prepend-icon="mdi-home" class="mr-2 hidden-sm-and-down">Inicio</v-btn>
       <v-btn variant="text" color="gold" to="/Temario" prepend-icon="mdi-book-open-variant" class="mr-2 hidden-sm-and-down">Temario</v-btn>
       <v-btn variant="outlined" color="white" to="/Creditos" prepend-icon="mdi-account-group" class="mr-4">Créditos</v-btn>
     </v-app-bar>
@@ -265,7 +265,7 @@
                   variant="outlined"
                   color="grey-lighten-2"
                   size="large"
-                  to="/Welcome"
+                  to="/"
                   prepend-icon="mdi-home"
                 >
                   Ir a Inicio

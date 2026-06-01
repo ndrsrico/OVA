@@ -3,7 +3,7 @@
     <v-app-bar app color="rgba(20, 20, 20, 0.85)" class="glass-header" theme="dark" elevation="0">
       <v-toolbar-title class="font-serif text-gold">Recursos - Derechos Fundamentales</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn variant="text" color="white" to="/Welcome" prepend-icon="mdi-home" class="mr-2 hidden-sm-and-down">Inicio</v-btn>
+      <v-btn variant="text" color="white" to="/" prepend-icon="mdi-home" class="mr-2 hidden-sm-and-down">Inicio</v-btn>
       <v-btn variant="text" color="white" to="/Temario" prepend-icon="mdi-book-open-variant" class="mr-2 hidden-sm-and-down">Temario</v-btn>
       <v-btn variant="outlined" color="white" to="/Creditos" prepend-icon="mdi-account-group" class="mr-4">Créditos</v-btn>
     </v-app-bar>
@@ -47,11 +47,9 @@
                     <v-btn
                       :href="doc.enlace"
                       target="_blank"
-                      color="gold"
-                      variant="outlined"
                       size="small"
                       append-icon="mdi-open-in-new"
-                      class="mt-auto"
+                      class="mt-auto gold-btn-outline"
                     >
                       Acceder
                     </v-btn>
@@ -127,11 +125,9 @@
                     <v-btn
                       :href="caso.enlace"
                       target="_blank"
-                      color="gold"
-                      variant="outlined"
                       size="small"
                       append-icon="mdi-open-in-new"
-                      class="mt-auto"
+                      class="mt-auto gold-btn-outline"
                     >
                       Leer Más
                     </v-btn>
@@ -198,11 +194,9 @@
                       v-if="recurso.enlace"
                       :href="recurso.enlace"
                       target="_blank"
-                      color="gold"
-                      variant="outlined"
                       size="small"
                       append-icon="mdi-open-in-new"
-                      class="mt-auto"
+                      class="mt-auto gold-btn-outline"
                     >
                       Acceder
                     </v-btn>
@@ -218,7 +212,7 @@
           <v-col cols="12" md="8" class="mx-auto text-center">
             <v-divider class="mb-8 border-opacity-50" color="gold"></v-divider>
             <v-btn
-              to="/Welcome"
+              to="/"
               color="gold"
               size="large"
               prepend-icon="mdi-home"
@@ -318,7 +312,7 @@ const casosEmbematicos = [
   },
   {
     titulo: 'Sentencia T-025/04 - Desplazamiento Forzado',
-    descripción: 'Sentencia que reconoce el estado de cosas inconstitucional en la situación de desplazados en Colombia.',
+    descripcion: 'Sentencia que reconoce el estado de cosas inconstitucional en la situación de desplazados en Colombia.',
     año: '2004',
     derechos: ['Dignidad', 'Vivienda', 'Vida'],
     enlace: 'https://www.corteconstitucional.gov.co/'
@@ -515,6 +509,12 @@ const recursosEducativos = [
 
 .w-fit {
   width: fit-content;
+}
+
+.gold-btn-outline {
+  border: 1px solid rgba(212,175,55,0.35) !important;
+  color: #D4AF37 !important;
+  background: transparent !important;
 }
 
 @media (max-width: 768px) {

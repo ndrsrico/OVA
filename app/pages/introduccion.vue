@@ -523,6 +523,21 @@ onMounted(() => {
   const savedTema = menuTemas.find(t => t.id === maxTemaDesbloqueado.value) || menuTemas[0]
   temaActual.value = savedTema
 
+  const route = useRoute()
+  const actualizarTemaDesdeRuta = () => {
+    const queryTema = parseInt(route.query.tema || route.hash.replace('#tema-', ''))
+    if (queryTema && queryTema >= 1 && queryTema <= menuTemas.length && queryTema <= maxTemaDesbloqueado.value) {
+      const targetTema = menuTemas.find(t => t.id === queryTema)
+      if (targetTema) {
+        temaActual.value = targetTema
+        vistaActiva.value = 'temas'
+      }
+    }
+  }
+  
+  actualizarTemaDesdeRuta()
+  watch(() => [route.hash, route.query.tema], actualizarTemaDesdeRuta)
+
   if (actividadesDesbloqueadas.value && progresoActividades.value > 0) {
     vistaActiva.value = 'actividades'
   }

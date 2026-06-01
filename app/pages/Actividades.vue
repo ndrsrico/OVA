@@ -34,80 +34,152 @@
         </v-row>
 
         <v-row class="mb-8" v-else>
-          <v-col cols="12" md="8" class="mx-auto text-center">
-            <h1 class="text-h3 font-serif text-white mb-4 slide-fade-in text-glow">ACTIVIDADES INTERACTIVAS</h1>
-            <p class="text-subtitle-1 font-serif-italic text-grey-lighten-2 slide-fade-in-delayed">
-              Fortalece tu comprensión de los Derechos Fundamentales con estas actividades. Completa una para desbloquear la siguiente.
-            </p>
-            <v-divider class="mt-6 border-opacity-50" color="gold"></v-divider>
+          <v-col cols="12" md="10" class="mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-8">
+              <h1 class="text-h3 font-serif text-white mb-4 slide-fade-in text-glow">ACTIVIDADES INTERACTIVAS</h1>
+              <p class="text-subtitle-1 font-serif-italic text-grey-lighten-2 slide-fade-in-delayed mb-6">
+                Completa cada actividad para desbloquear la siguiente.
+              </p>
+            </div>
+
+            <!-- Barra de progreso clara -->
+            <div class="progress-section mb-8 pa-6 rounded-xl" style="background: rgba(212,175,55,0.08); border: 2px solid rgba(212,175,55,0.3);">
+              <div class="d-flex justify-space-between align-center mb-3">
+                <span class="text-body-1 font-weight-bold text-white">Progreso:</span>
+                <span class="text-body-2 text-gold font-weight-bold">{{ progresoActividades }} / {{ listaActividades.length }} completadas</span>
+              </div>
+              <v-progress-linear
+                :value="(progresoActividades / listaActividades.length) * 100"
+                color="success"
+                background-color="rgba(255,255,255,0.1)"
+                height="24"
+                rounded
+              ></v-progress-linear>
+            </div>
+
+            <!-- Filtro -->
+            <div class="d-flex justify-center mb-8 gap-2">
+              <v-btn 
+                v-for="tipo in ['Todas', 'Quiz', 'Analisis', 'Reflexion']"
+                :key="tipo"
+                @click="filtro = tipo"
+                size="small"
+                :color="filtro === tipo ? '#D4AF37' : 'rgba(255,255,255,0.3)'"
+                :variant="filtro === tipo ? 'flat' : 'outlined'"
+                class="font-weight-bold text-uppercase"
+              >
+                {{ tipo === 'Analisis' ? 'Análisis' : tipo }}
+              </v-btn>
+            </div>
+
+            <v-divider class="mb-8 border-opacity-50" color="gold"></v-divider>
           </v-col>
         </v-row>
 
         <v-row justify="center">
-          <v-col v-for="(actividad, index) in listaActividades" :key="index" cols="12" sm="6" md="4">
+          <v-col v-for="(actividad, index) in actividadesFiltradas" :key="actividad.titulo" cols="12" sm="6" md="4">
             <v-card 
               elevation="0" 
-              class="rounded-xl h-100 d-flex flex-column hover-card card-animation glass-card"
-              :class="{ 'locked-card': !actividadesDesbloqueadas || index > progresoActividades }"
-              :style="{ animationDelay: `${index * 0.2}s` }"
+              class="rounded-xl h-100 d-flex flex-column card-animation"
+              :class="{
+                'activity-locked': !actividadesDesbloqueadas || listaActividades.indexOf(actividad) > progresoActividades,
+                'activity-completed': listaActividades.indexOf(actividad) < progresoActividades,
+                'activity-active': listaActividades.indexOf(actividad) === progresoActividades
+              }"
+              :style="{ animationDelay: `${listaActividades.indexOf(actividad) * 0.15}s` }"
             >
-              <div :class="['pa-6 text-center text-white font-weight-bold d-flex flex-column align-center justify-center position-relative border-b']">
-                <v-icon v-if="!actividadesDesbloqueadas || index > progresoActividades" size="48" class="mb-2 position-absolute" style="opacity: 0.3;">mdi-lock</v-icon>
-                <v-icon size="48" class="mb-2" :style="{ opacity: (!actividadesDesbloqueadas || index > progresoActividades) ? '0.2' : '1' }" color="gold">{{ actividad.icono }}</v-icon>
-                <div class="text-overline uppercase tracking-wider text-amber-lighten-4">{{ actividad.plataforma }}</div>
+              <!-- Estado badge -->
+              <div 
+                class="state-indicator pa-5 text-center"
+                :class="{
+                  'state-locked': !actividadesDesbloqueadas || listaActividades.indexOf(actividad) > progresoActividades,
+                  'state-completed': listaActividades.indexOf(actividad) < progresoActividades,
+                  'state-active': listaActividades.indexOf(actividad) === progresoActividades
+                }"
+              >
+                <v-icon 
+                  :size="56" 
+                  class="mb-2"
+                  :color="listaActividades.indexOf(actividad) < progresoActividades ? 'success' : listaActividades.indexOf(actividad) === progresoActividades ? 'warning' : 'grey'"
+                >
+                  {{ listaActividades.indexOf(actividad) < progresoActividades ? 'mdi-check-circle' : listaActividades.indexOf(actividad) === progresoActividades ? actividad.icono : 'mdi-lock-outline' }}
+                </v-icon>
+                <div class="text-caption font-weight-bold text-uppercase" :style="{ 
+                  color: listaActividades.indexOf(actividad) < progresoActividades ? '#4CAF50' : 
+                         listaActividades.indexOf(actividad) === progresoActividades ? '#D4AF37' : '#999'
+                }">
+                  {{ listaActividades.indexOf(actividad) < progresoActividades ? 'Completada' : listaActividades.indexOf(actividad) === progresoActividades ? 'EN PROGRESO' : 'Bloqueada' }}
+                </div>
               </div>
 
               <v-card-text class="pa-6 flex-grow-1 text-white">
-                <h3 class="text-h5 font-serif text-gold mb-3 line-clamp-2">
+                <h3 class="text-h6 font-serif font-weight-bold mb-2" style="color: #D4AF37;">
                   {{ actividad.titulo }}
                 </h3>
-                <p class="text-body-2 text-justify text-grey-lighten-2 mb-4" style="line-height: 1.6;">
+                <div class="mb-3 text-caption" style="color: rgba(255,255,255,0.7);">{{ actividad.tipo }}</div>
+                <p class="text-body-2 text-justify" style="color: rgba(255,255,255,0.85); line-height: 1.5; margin-bottom: 1rem;">
                   {{ actividad.descripcion }}
                 </p>
                 
-                <v-chip size="small" variant="outlined" color="gold" prepend-icon="mdi-trophy-variant">
+                <v-chip 
+                  size="small" 
+                  :color="listaActividades.indexOf(actividad) < progresoActividades ? '#4CAF50' : 
+                          listaActividades.indexOf(actividad) === progresoActividades ? '#D4AF37' : '#555'"
+                  text-color="white"
+                  class="font-weight-bold"
+                >
                   {{ actividad.meta }}
                 </v-chip>
               </v-card-text>
 
-              <v-divider class="border-opacity-50" color="white"></v-divider>
+              <v-divider class="border-opacity-25"></v-divider>
 
-              <v-card-actions class="pa-6 bg-transparent d-flex flex-column gap-3">
+              <v-card-actions class="pa-4 bg-transparent d-flex flex-column gap-2">
                 <v-btn 
+                  v-if="actividadesDesbloqueadas && listaActividades.indexOf(actividad) <= progresoActividades"
                   block
-                  size="large"
-                  color="gold-btn"
-                  class="font-weight-bold mb-2 dynamic-btn"
+                  size="small"
+                  :color="listaActividades.indexOf(actividad) === progresoActividades ? 'warning' : 'success'"
+                  class="font-weight-bold"
                   :href="actividad.enlace"
                   target="_blank"
                   append-icon="mdi-open-in-new"
-                  :disabled="!actividadesDesbloqueadas || index > progresoActividades"
                 >
-                  Ir al Desafío
+                  {{ listaActividades.indexOf(actividad) === progresoActividades ? 'Empezar Ahora' : 'Revisar' }}
                 </v-btn>
                 <v-btn 
-                  v-if="actividadesDesbloqueadas && index === progresoActividades"
+                  v-if="actividadesDesbloqueadas && listaActividades.indexOf(actividad) === progresoActividades"
                   block
-                  variant="outlined"
-                  color="green-darken-2"
+                  size="small"
+                  color="success"
+                  variant="flat"
                   prepend-icon="mdi-check-circle"
-                  @click="completarActividad(index)"
-                  class="pulse-animation-btn"
+                  @click="completarActividad(listaActividades.indexOf(actividad))"
+                  class="font-weight-bold pulse-btn"
                 >
-                  Marcar Completado
+                  Marcar Completada
                 </v-btn>
                 <v-btn 
-                  v-else-if="actividadesDesbloqueadas && index < progresoActividades"
+                  v-else-if="!actividadesDesbloqueadas || listaActividades.indexOf(actividad) > progresoActividades"
                   block
-                  variant="text"
-                  color="green"
-                  prepend-icon="mdi-check-all"
+                  size="small"
+                  variant="outlined"
+                  color="grey"
                   disabled
+                  prepend-icon="mdi-lock"
                 >
-                  Completado
+                  Bloqueada
                 </v-btn>
               </v-card-actions>
             </v-card>
+          </v-col>
+          <v-col cols="12" v-if="actividadesFiltradas.length === 0">
+            <div class="text-center pa-8">
+              <v-icon size="48" color="gold" class="mb-4">mdi-emoticon-sad-outline</v-icon>
+              <h3 class="text-h6 font-serif text-white">No hay actividades en esta categoría</h3>
+              <p class="text-body-2 text-grey-lighten-2">Prueba seleccionando "Todas" o revisa las actividades disponibles.</p>
+            </div>
           </v-col>
         </v-row>
       </v-container>
@@ -116,10 +188,14 @@
 </template>
 
 <script setup>
-import { onMounted, watch } from 'vue'
+import { onMounted, watch, ref, computed } from 'vue'
 
 const actividadesDesbloqueadas = useState('actividadesDesbloqueadas', () => false)
 const progresoActividades = useState('progresoActividades', () => 0)
+const filtro = ref('Todas')
+
+const TEMAS_TOTALES = 5
+
 
 // ---- Sincronización con localStorage ----
 onMounted(() => {
@@ -129,6 +205,8 @@ onMounted(() => {
       const data = JSON.parse(saved)
       if (data.actDesbloqueadas !== undefined) actividadesDesbloqueadas.value = data.actDesbloqueadas
       if (data.progresoAct !== undefined) progresoActividades.value = data.progresoAct
+      // si completó todos los temas, desbloquear actividades por seguridad
+      if (data.maxTema && data.maxTema > TEMAS_TOTALES) actividadesDesbloqueadas.value = true
     } catch (e) { /* ignore */ }
   }
 })
@@ -158,6 +236,7 @@ const completarActividad = (index) => {
 const listaActividades = [
   {
     plataforma: 'Actividad 1',
+    tipo: 'Reflexion',
     titulo: 'Reflexión: ¿Cuáles son mis derechos?',
     descripcion: 'Realiza una reflexión personal sobre qué derechos fundamentales consideras más importantes en tu vida diaria y por qué. Escribe tus ideas en un documento.',
     meta: 'Pensamiento crítico',
@@ -167,6 +246,7 @@ const listaActividades = [
   },
   {
     plataforma: 'Actividad 2',
+    tipo: 'Quiz',
     titulo: 'Quiz: ¿Qué tanto sabes de derechos?',
     descripcion: 'Responde preguntas simples sobre los derechos fundamentales que aprendiste. Evalúa tu comprensión de lo estudiado en cada tema.',
     meta: 'Evaluación del aprendizaje',
@@ -176,6 +256,7 @@ const listaActividades = [
   },
   {
     plataforma: 'Actividad 3',
+    tipo: 'Analisis',
     titulo: 'Análisis: Casos de la vida real',
     descripcion: 'Lee historias cortas y casos reales de la vida cotidiana. Identifica cuáles derechos fundamentales están involucrados en cada situación.',
     meta: 'Aplicación práctica',
@@ -184,6 +265,12 @@ const listaActividades = [
     enlace: 'https://www.padlet.com'
   }
 ]
+
+const actividadesFiltradas = computed(() => {
+  if (filtro.value === 'Todas') return listaActividades
+  if (filtro.value === 'Analisis') return listaActividades.filter(a => (a.tipo || '').toLowerCase() === 'analisis')
+  return listaActividades.filter(a => (a.tipo || '').toLowerCase() === filtro.value.toLowerCase())
+})
 </script>
 
 <style scoped>
@@ -215,11 +302,38 @@ const listaActividades = [
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.glass-card {
-  background: rgba(20, 20, 20, 0.6) !important;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+/* Estados de actividades */
+.activity-locked {
+  background: rgba(50, 50, 50, 0.8) !important;
+  border: 2px solid rgba(153, 153, 153, 0.3) !important;
+  opacity: 0.6;
+}
+
+.activity-completed {
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.15), rgba(56, 142, 60, 0.1)) !important;
+  border: 2px solid rgba(76, 175, 80, 0.4) !important;
+}
+
+.activity-active {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.08)) !important;
+  border: 2px solid rgba(212, 175, 55, 0.5) !important;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+.state-indicator {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.state-locked {
+  background: rgba(100, 100, 100, 0.1);
+}
+
+.state-completed {
+  background: rgba(76, 175, 80, 0.1);
+}
+
+.state-active {
+  background: rgba(212, 175, 55, 0.1);
 }
 
 .border-b {
@@ -239,13 +353,14 @@ const listaActividades = [
   box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2) !important;
 }
 
+.activity-locked {
+  pointer-events: none;
+}
+
 .locked-card {
   opacity: 0.7;
   filter: grayscale(100%);
   pointer-events: none;
-}
-.locked-card .v-btn {
-  pointer-events: auto; /* Para que al menos se vea el cursor de deshabilitado si lo tiene */
 }
 
 .line-clamp-2 {
