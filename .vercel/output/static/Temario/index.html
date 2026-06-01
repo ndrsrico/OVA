@@ -1,0 +1,379 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>@import"https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap";.sidebar-glass[data-v-64b1facd]{-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);background:#141414cc!important}.sidebar-header[data-v-64b1facd]{background:#d4af370d}.progress-track[data-v-64b1facd]{background:#ffffff1a;border-radius:10px;height:4px;overflow:hidden;width:100%}.progress-fill[data-v-64b1facd]{background:linear-gradient(90deg,#d4af37,khaki);border-radius:10px;height:100%;transition:width .5s ease}.dynamic-bg[data-v-64b1facd]{background:linear-gradient(135deg,#050505,#1a1a1a 50%,#050505);background-attachment:fixed}.floating-shapes[data-v-64b1facd]{height:100%;overflow:hidden;pointer-events:none;position:absolute;width:100%;z-index:0}.shape[data-v-64b1facd]{background:radial-gradient(circle,#d4af37,transparent);border-radius:50%;opacity:.03;position:absolute}.shape-1[data-v-64b1facd]{animation:float-64b1facd 20s ease-in-out infinite;height:200px;left:10%;top:10%;width:200px}.shape-2[data-v-64b1facd]{animation:float-64b1facd 25s ease-in-out infinite;animation-delay:5s;height:150px;right:10%;top:60%;width:150px}.shape-3[data-v-64b1facd]{animation:float-64b1facd 30s ease-in-out infinite;animation-delay:10s;bottom:10%;height:100px;left:50%;width:100px}.shape-4[data-v-64b1facd]{animation:float-64b1facd 22s ease-in-out infinite;animation-delay:8s;height:180px;right:20%;top:20%;width:180px}.shape-5[data-v-64b1facd]{animation:float-64b1facd 28s ease-in-out infinite;animation-delay:12s;bottom:20%;height:120px;right:30%;width:120px}@keyframes float-64b1facd{0%,to{transform:translateY(0) translate(0)}50%{transform:translateY(-30px) translate(20px)}}.glass-card[data-v-64b1facd]{-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);background:#1e1e1e99!important;border:1px solid rgba(212,175,55,.2);transition:all .3s ease}.glass-card[data-v-64b1facd]:hover:not(.locked-card){background:#1e1e1ecc!important;border-color:#d4af3780;transform:translateY(-8px)}.locked-card[data-v-64b1facd]{opacity:.6}.header-completed[data-v-64b1facd]{background:linear-gradient(135deg,#4caf5033,#388e3c1a)}.header-active[data-v-64b1facd]{background:linear-gradient(135deg,#d4af3733,#d4af371a)}.header-locked[data-v-64b1facd]{background:linear-gradient(135deg,#80808033,#8080801a)}.tema-number[data-v-64b1facd]{color:#d4af37;font-family:Cinzel,serif;font-size:2rem;font-weight:700;margin-bottom:8px}.badge-active[data-v-64b1facd],.badge-completed[data-v-64b1facd],.badge-locked[data-v-64b1facd]{font-size:.7rem;font-weight:600;letter-spacing:1px;margin-top:8px;text-transform:uppercase}.badge-completed[data-v-64b1facd]{color:#4caf50}.badge-active[data-v-64b1facd]{color:#d4af37}.badge-locked[data-v-64b1facd]{color:#999}.text-glow[data-v-64b1facd]{text-shadow:0 0 20px rgba(212,175,55,.3)}@keyframes slide-fade-in-64b1facd{0%{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}.slide-fade-in[data-v-64b1facd],.slide-fade-in-delayed[data-v-64b1facd]{animation:slide-fade-in-64b1facd .6s ease-out}.slide-fade-in-delayed[data-v-64b1facd]{animation-delay:.2s;animation-fill-mode:forwards;opacity:0}.card-animation[data-v-64b1facd]{animation:cardBounce-64b1facd .6s cubic-bezier(.34,1.56,.64,1);animation-fill-mode:both}@keyframes cardBounce-64b1facd{0%{opacity:0;transform:translateY(20px) scale(.9)}to{opacity:1;transform:translateY(0) scale(1)}}@media(max-width:768px){.dynamic-bg[data-v-64b1facd]{background:linear-gradient(135deg,#050505,#1a1a1a)}}</style><style>@import"https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap";.font-serif[data-v-3dffaee9]{font-family:Cinzel,serif!important}.text-gold[data-v-3dffaee9]{color:#d4af37!important}.footer-section[data-v-3dffaee9]{backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);background:linear-gradient(135deg,#0a0a0afa,#140f0af2);border-top:1px solid rgba(212,175,55,.2);margin-top:60px;padding-top:20px}.escudo-wrapper[data-v-3dffaee9]{align-items:center;background:#d4af370d;border:2px solid rgba(212,175,55,.25);border-radius:12px;display:flex;height:150px;justify-content:center;padding:12px;transition:all .3s ease;width:150px}.escudo-wrapper[data-v-3dffaee9]:hover{background:#d4af371a;border-color:#d4af3780;box-shadow:0 0 25px #d4af374d;transform:scale(1.1)}.escudo-img-direct[data-v-3dffaee9]{display:block;filter:drop-shadow(0 2px 8px rgba(0,0,0,.3));height:auto;max-height:100%;max-width:100%;transition:filter .3s ease;width:auto}.escudo-wrapper:hover .escudo-img-direct[data-v-3dffaee9]{filter:drop-shadow(0 4px 16px rgba(212,175,55,.4))}.footer-center[data-v-3dffaee9],.footer-left[data-v-3dffaee9],.footer-right[data-v-3dffaee9]{border-right:1px solid hsla(0,0%,100%,.05)}.footer-right[data-v-3dffaee9]{border-right:none}.contact-info[data-v-3dffaee9]{text-align:left}.contact-item[data-v-3dffaee9]{align-items:center;display:flex;padding:8px 0;transition:all .2s ease}.contact-item[data-v-3dffaee9]:hover{color:#d4af37;transform:translate(4px)}.quick-links[data-v-3dffaee9]{display:flex;flex-direction:column;gap:4px}.footer-link[data-v-3dffaee9]{justify-content:flex-start;transition:all .2s ease}.footer-link[data-v-3dffaee9]:hover{color:#d4af37!important;transform:translate(4px)}.copyright-section[data-v-3dffaee9]{background:#0000004d}@media(max-width:960px){.footer-center[data-v-3dffaee9],.footer-left[data-v-3dffaee9],.footer-right[data-v-3dffaee9]{border-right:none}.footer-center[data-v-3dffaee9],.footer-left[data-v-3dffaee9],.footer-right[data-v-3dffaee9]{border-bottom:1px solid hsla(0,0%,100%,.05)}.escudo-container[data-v-3dffaee9]{height:100px;width:100px}}</style><link rel="stylesheet" href="/_nuxt/entry.CfwruczQ.css" crossorigin><link rel="stylesheet" href="/_nuxt/VMain.C25VzG1Y.css" crossorigin><link rel="stylesheet" href="/_nuxt/VNavigationDrawer.Cd2wUyer.css" crossorigin><link rel="preload" as="fetch" crossorigin="anonymous" href="/Temario/_payload.json?4669a70a-13cc-4264-9161-2dd5a3fcb6be"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/BOcwpetO.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/BQ8A96bu.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/dg2Z2PwU.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/DzS7o_NN.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/CgWbNzLU.js"><script type="module" src="/_nuxt/BOcwpetO.js" crossorigin></script></head><body><style id="vuetify-theme-stylesheet">@layer vuetify-utilities {
+  @layer theme-base {
+  :root {
+    --v-theme-background: 255,255,255;
+    --v-theme-background-overlay-multiplier: 1;
+    --v-theme-surface: 255,255,255;
+    --v-theme-surface-overlay-multiplier: 1;
+    --v-theme-surface-bright: 255,255,255;
+    --v-theme-surface-bright-overlay-multiplier: 1;
+    --v-theme-surface-light: 238,238,238;
+    --v-theme-surface-light-overlay-multiplier: 1;
+    --v-theme-surface-variant: 66,66,66;
+    --v-theme-surface-variant-overlay-multiplier: 2;
+    --v-theme-on-surface-variant: 238,238,238;
+    --v-theme-primary: 24,103,192;
+    --v-theme-primary-overlay-multiplier: 2;
+    --v-theme-primary-darken-1: 31,85,146;
+    --v-theme-primary-darken-1-overlay-multiplier: 2;
+    --v-theme-secondary: 72,169,166;
+    --v-theme-secondary-overlay-multiplier: 1;
+    --v-theme-secondary-darken-1: 1,135,134;
+    --v-theme-secondary-darken-1-overlay-multiplier: 1;
+    --v-theme-error: 176,0,32;
+    --v-theme-error-overlay-multiplier: 2;
+    --v-theme-info: 33,150,243;
+    --v-theme-info-overlay-multiplier: 1;
+    --v-theme-success: 76,175,80;
+    --v-theme-success-overlay-multiplier: 1;
+    --v-theme-warning: 251,140,0;
+    --v-theme-warning-overlay-multiplier: 1;
+    --v-theme-on-background: 0,0,0;
+    --v-theme-on-surface: 0,0,0;
+    --v-theme-on-surface-bright: 0,0,0;
+    --v-theme-on-surface-light: 0,0,0;
+    --v-theme-on-primary: 255,255,255;
+    --v-theme-on-primary-darken-1: 255,255,255;
+    --v-theme-on-secondary: 255,255,255;
+    --v-theme-on-secondary-darken-1: 255,255,255;
+    --v-theme-on-error: 255,255,255;
+    --v-theme-on-info: 255,255,255;
+    --v-theme-on-success: 255,255,255;
+    --v-theme-on-warning: 255,255,255;
+    --v-border-color: 0, 0, 0;
+    --v-border-opacity: 0.12;
+    --v-shadow-color: 0, 0, 0;
+    --v-high-emphasis-opacity: 0.87;
+    --v-medium-emphasis-opacity: 0.6;
+    --v-disabled-opacity: 0.38;
+    --v-idle-opacity: 0.04;
+    --v-hover-opacity: 0.04;
+    --v-focus-opacity: 0.12;
+    --v-selected-opacity: 0.08;
+    --v-activated-opacity: 0.12;
+    --v-pressed-opacity: 0.12;
+    --v-dragged-opacity: 0.08;
+    --v-theme-kbd: 238, 238, 238;
+    --v-theme-on-kbd: 0, 0, 0;
+    --v-theme-code: 245, 245, 245;
+    --v-theme-on-code: 0, 0, 0;
+    --v-theme-on-dark: 255, 255, 255;
+    --v-theme-on-light: 0, 0, 0;
+    --v-elevation-overlay-color: black;
+    --v-elevation-overlay-opacity-step: 2%;
+  }
+  .v-theme--light {
+    color-scheme: normal;
+    --v-theme-background: 255,255,255;
+    --v-theme-background-overlay-multiplier: 1;
+    --v-theme-surface: 255,255,255;
+    --v-theme-surface-overlay-multiplier: 1;
+    --v-theme-surface-bright: 255,255,255;
+    --v-theme-surface-bright-overlay-multiplier: 1;
+    --v-theme-surface-light: 238,238,238;
+    --v-theme-surface-light-overlay-multiplier: 1;
+    --v-theme-surface-variant: 66,66,66;
+    --v-theme-surface-variant-overlay-multiplier: 2;
+    --v-theme-on-surface-variant: 238,238,238;
+    --v-theme-primary: 24,103,192;
+    --v-theme-primary-overlay-multiplier: 2;
+    --v-theme-primary-darken-1: 31,85,146;
+    --v-theme-primary-darken-1-overlay-multiplier: 2;
+    --v-theme-secondary: 72,169,166;
+    --v-theme-secondary-overlay-multiplier: 1;
+    --v-theme-secondary-darken-1: 1,135,134;
+    --v-theme-secondary-darken-1-overlay-multiplier: 1;
+    --v-theme-error: 176,0,32;
+    --v-theme-error-overlay-multiplier: 2;
+    --v-theme-info: 33,150,243;
+    --v-theme-info-overlay-multiplier: 1;
+    --v-theme-success: 76,175,80;
+    --v-theme-success-overlay-multiplier: 1;
+    --v-theme-warning: 251,140,0;
+    --v-theme-warning-overlay-multiplier: 1;
+    --v-theme-on-background: 0,0,0;
+    --v-theme-on-surface: 0,0,0;
+    --v-theme-on-surface-bright: 0,0,0;
+    --v-theme-on-surface-light: 0,0,0;
+    --v-theme-on-primary: 255,255,255;
+    --v-theme-on-primary-darken-1: 255,255,255;
+    --v-theme-on-secondary: 255,255,255;
+    --v-theme-on-secondary-darken-1: 255,255,255;
+    --v-theme-on-error: 255,255,255;
+    --v-theme-on-info: 255,255,255;
+    --v-theme-on-success: 255,255,255;
+    --v-theme-on-warning: 255,255,255;
+    --v-border-color: 0, 0, 0;
+    --v-border-opacity: 0.12;
+    --v-shadow-color: 0, 0, 0;
+    --v-high-emphasis-opacity: 0.87;
+    --v-medium-emphasis-opacity: 0.6;
+    --v-disabled-opacity: 0.38;
+    --v-idle-opacity: 0.04;
+    --v-hover-opacity: 0.04;
+    --v-focus-opacity: 0.12;
+    --v-selected-opacity: 0.08;
+    --v-activated-opacity: 0.12;
+    --v-pressed-opacity: 0.12;
+    --v-dragged-opacity: 0.08;
+    --v-theme-kbd: 238, 238, 238;
+    --v-theme-on-kbd: 0, 0, 0;
+    --v-theme-code: 245, 245, 245;
+    --v-theme-on-code: 0, 0, 0;
+    --v-theme-on-dark: 255, 255, 255;
+    --v-theme-on-light: 0, 0, 0;
+    --v-elevation-overlay-color: black;
+    --v-elevation-overlay-opacity-step: 2%;
+  }
+  .v-theme--dark {
+    color-scheme: dark;
+    --v-theme-background: 18,18,18;
+    --v-theme-background-overlay-multiplier: 1;
+    --v-theme-surface: 33,33,33;
+    --v-theme-surface-overlay-multiplier: 1;
+    --v-theme-surface-bright: 204,191,214;
+    --v-theme-surface-bright-overlay-multiplier: 2;
+    --v-theme-surface-light: 66,66,66;
+    --v-theme-surface-light-overlay-multiplier: 1;
+    --v-theme-surface-variant: 200,200,200;
+    --v-theme-surface-variant-overlay-multiplier: 2;
+    --v-theme-on-surface-variant: 0,0,0;
+    --v-theme-primary: 33,150,243;
+    --v-theme-primary-overlay-multiplier: 2;
+    --v-theme-primary-darken-1: 39,124,193;
+    --v-theme-primary-darken-1-overlay-multiplier: 2;
+    --v-theme-secondary: 84,182,178;
+    --v-theme-secondary-overlay-multiplier: 2;
+    --v-theme-secondary-darken-1: 72,169,166;
+    --v-theme-secondary-darken-1-overlay-multiplier: 2;
+    --v-theme-error: 207,102,121;
+    --v-theme-error-overlay-multiplier: 2;
+    --v-theme-info: 33,150,243;
+    --v-theme-info-overlay-multiplier: 2;
+    --v-theme-success: 76,175,80;
+    --v-theme-success-overlay-multiplier: 2;
+    --v-theme-warning: 251,140,0;
+    --v-theme-warning-overlay-multiplier: 2;
+    --v-theme-on-background: 255,255,255;
+    --v-theme-on-surface: 255,255,255;
+    --v-theme-on-surface-bright: 0,0,0;
+    --v-theme-on-surface-light: 255,255,255;
+    --v-theme-on-primary: 255,255,255;
+    --v-theme-on-primary-darken-1: 255,255,255;
+    --v-theme-on-secondary: 255,255,255;
+    --v-theme-on-secondary-darken-1: 255,255,255;
+    --v-theme-on-error: 255,255,255;
+    --v-theme-on-info: 255,255,255;
+    --v-theme-on-success: 255,255,255;
+    --v-theme-on-warning: 255,255,255;
+    --v-border-color: 255, 255, 255;
+    --v-border-opacity: 0.12;
+    --v-shadow-color: 0, 0, 0;
+    --v-high-emphasis-opacity: 1;
+    --v-medium-emphasis-opacity: 0.7;
+    --v-disabled-opacity: 0.5;
+    --v-idle-opacity: 0.1;
+    --v-hover-opacity: 0.04;
+    --v-focus-opacity: 0.12;
+    --v-selected-opacity: 0.08;
+    --v-activated-opacity: 0.12;
+    --v-pressed-opacity: 0.16;
+    --v-dragged-opacity: 0.08;
+    --v-theme-kbd: 66, 66, 66;
+    --v-theme-on-kbd: 255, 255, 255;
+    --v-theme-code: 52, 52, 52;
+    --v-theme-on-code: 204, 204, 204;
+    --v-theme-on-dark: 255, 255, 255;
+    --v-theme-on-light: 0, 0, 0;
+    --v-elevation-overlay-color: white;
+    --v-elevation-overlay-opacity-step: 2%;
+  }
+  }
+  @layer theme-background {
+    .bg-background {
+      --v-theme-overlay-multiplier: var(--v-theme-background-overlay-multiplier);
+      background-color: rgb(var(--v-theme-background));
+      color: rgb(var(--v-theme-on-background));
+    }
+    .bg-surface {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface));
+      color: rgb(var(--v-theme-on-surface));
+    }
+    .bg-surface-bright {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-bright-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface-bright));
+      color: rgb(var(--v-theme-on-surface-bright));
+    }
+    .bg-surface-light {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-light-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface-light));
+      color: rgb(var(--v-theme-on-surface-light));
+    }
+    .bg-surface-variant {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-variant-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface-variant));
+      color: rgb(var(--v-theme-on-surface-variant));
+    }
+    .bg-primary {
+      --v-theme-overlay-multiplier: var(--v-theme-primary-overlay-multiplier);
+      background-color: rgb(var(--v-theme-primary));
+      color: rgb(var(--v-theme-on-primary));
+    }
+    .bg-primary-darken-1 {
+      --v-theme-overlay-multiplier: var(--v-theme-primary-darken-1-overlay-multiplier);
+      background-color: rgb(var(--v-theme-primary-darken-1));
+      color: rgb(var(--v-theme-on-primary-darken-1));
+    }
+    .bg-secondary {
+      --v-theme-overlay-multiplier: var(--v-theme-secondary-overlay-multiplier);
+      background-color: rgb(var(--v-theme-secondary));
+      color: rgb(var(--v-theme-on-secondary));
+    }
+    .bg-secondary-darken-1 {
+      --v-theme-overlay-multiplier: var(--v-theme-secondary-darken-1-overlay-multiplier);
+      background-color: rgb(var(--v-theme-secondary-darken-1));
+      color: rgb(var(--v-theme-on-secondary-darken-1));
+    }
+    .bg-error {
+      --v-theme-overlay-multiplier: var(--v-theme-error-overlay-multiplier);
+      background-color: rgb(var(--v-theme-error));
+      color: rgb(var(--v-theme-on-error));
+    }
+    .bg-info {
+      --v-theme-overlay-multiplier: var(--v-theme-info-overlay-multiplier);
+      background-color: rgb(var(--v-theme-info));
+      color: rgb(var(--v-theme-on-info));
+    }
+    .bg-success {
+      --v-theme-overlay-multiplier: var(--v-theme-success-overlay-multiplier);
+      background-color: rgb(var(--v-theme-success));
+      color: rgb(var(--v-theme-on-success));
+    }
+    .bg-warning {
+      --v-theme-overlay-multiplier: var(--v-theme-warning-overlay-multiplier);
+      background-color: rgb(var(--v-theme-warning));
+      color: rgb(var(--v-theme-on-warning));
+    }
+  }
+  @layer theme-foreground {
+    .text-background {
+      color: rgb(var(--v-theme-background));
+    }
+    .border-background {
+      --v-border-color: var(--v-theme-background);
+    }
+    .text-surface {
+      color: rgb(var(--v-theme-surface));
+    }
+    .border-surface {
+      --v-border-color: var(--v-theme-surface);
+    }
+    .text-surface-bright {
+      color: rgb(var(--v-theme-surface-bright));
+    }
+    .border-surface-bright {
+      --v-border-color: var(--v-theme-surface-bright);
+    }
+    .text-surface-light {
+      color: rgb(var(--v-theme-surface-light));
+    }
+    .border-surface-light {
+      --v-border-color: var(--v-theme-surface-light);
+    }
+    .text-surface-variant {
+      color: rgb(var(--v-theme-surface-variant));
+    }
+    .border-surface-variant {
+      --v-border-color: var(--v-theme-surface-variant);
+    }
+    .on-surface-variant {
+      color: rgb(var(--v-theme-on-surface-variant));
+    }
+    .text-primary {
+      color: rgb(var(--v-theme-primary));
+    }
+    .border-primary {
+      --v-border-color: var(--v-theme-primary);
+    }
+    .text-primary-darken-1 {
+      color: rgb(var(--v-theme-primary-darken-1));
+    }
+    .border-primary-darken-1 {
+      --v-border-color: var(--v-theme-primary-darken-1);
+    }
+    .text-secondary {
+      color: rgb(var(--v-theme-secondary));
+    }
+    .border-secondary {
+      --v-border-color: var(--v-theme-secondary);
+    }
+    .text-secondary-darken-1 {
+      color: rgb(var(--v-theme-secondary-darken-1));
+    }
+    .border-secondary-darken-1 {
+      --v-border-color: var(--v-theme-secondary-darken-1);
+    }
+    .text-error {
+      color: rgb(var(--v-theme-error));
+    }
+    .border-error {
+      --v-border-color: var(--v-theme-error);
+    }
+    .text-info {
+      color: rgb(var(--v-theme-info));
+    }
+    .border-info {
+      --v-border-color: var(--v-theme-info);
+    }
+    .text-success {
+      color: rgb(var(--v-theme-success));
+    }
+    .border-success {
+      --v-border-color: var(--v-theme-success);
+    }
+    .text-warning {
+      color: rgb(var(--v-theme-warning));
+    }
+    .border-warning {
+      --v-border-color: var(--v-theme-warning);
+    }
+    .on-background {
+      color: rgb(var(--v-theme-on-background));
+    }
+    .on-surface {
+      color: rgb(var(--v-theme-on-surface));
+    }
+    .on-surface-bright {
+      color: rgb(var(--v-theme-on-surface-bright));
+    }
+    .on-surface-light {
+      color: rgb(var(--v-theme-on-surface-light));
+    }
+    .on-primary {
+      color: rgb(var(--v-theme-on-primary));
+    }
+    .on-primary-darken-1 {
+      color: rgb(var(--v-theme-on-primary-darken-1));
+    }
+    .on-secondary {
+      color: rgb(var(--v-theme-on-secondary));
+    }
+    .on-secondary-darken-1 {
+      color: rgb(var(--v-theme-on-secondary-darken-1));
+    }
+    .on-error {
+      color: rgb(var(--v-theme-on-error));
+    }
+    .on-info {
+      color: rgb(var(--v-theme-on-info));
+    }
+    .on-success {
+      color: rgb(var(--v-theme-on-success));
+    }
+    .on-warning {
+      color: rgb(var(--v-theme-on-warning));
+    }
+  }
+
+}</style><div id="__nuxt"><div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr" style=""><div class="v-application__wrap"><!--[--><div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr" style="" data-v-64b1facd><div class="v-application__wrap"><!--[--><header class="v-toolbar v-toolbar--collapse-start v-toolbar--density-default elevation-0 v-theme--dark v-locale--is-ltr v-app-bar glass-header" style="background-color:rgba(20, 20, 20, 0.85);top:0;z-index:904;transform:translateY(0%);position:absolute;transition:none !important;" app data-v-64b1facd><!----><!--[--><div class="v-toolbar__content" style="height:64px;"><!----><!----><!--[--><button type="button" class="v-btn v-btn--icon v-theme--dark text-gold v-btn--density-default v-btn--size-default v-btn--variant-text v-app-bar-nav-icon" style="" data-v-64b1facd><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><i class="mdi-menu mdi v-icon notranslate v-theme--dark v-icon--size-default" style="" aria-hidden="true"></i></span><!----><!----></button><div class="v-toolbar-title font-serif text-gold" style="" data-v-64b1facd><div class="v-toolbar-title__placeholder"><!----><!--[-->Temario - Derechos Fundamentales<!--]--></div></div><div class="v-spacer" style="" data-v-64b1facd></div><a href="/Welcome" class="v-btn v-theme--dark text-white v-btn--density-default v-btn--size-default v-btn--variant-text mr-2 hidden-sm-and-down" style="" data-v-64b1facd><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><span class="v-btn__prepend"><i class="mdi-home mdi v-icon notranslate v-theme--dark v-icon--size-default" style="" aria-hidden="true"></i></span><span class="v-btn__content" data-no-activator><!--[--><!--[-->Inicio<!--]--><!--]--></span><!----><!----></a><a href="/introduccion" class="v-btn v-theme--dark text-gold v-btn--density-default v-btn--size-default v-btn--variant-text mr-2 hidden-sm-and-down" style="" data-v-64b1facd><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><span class="v-btn__prepend"><i class="mdi-book-open-variant mdi v-icon notranslate v-theme--dark v-icon--size-default" style="" aria-hidden="true"></i></span><span class="v-btn__content" data-no-activator><!--[--><!--[-->Leer Temario<!--]--><!--]--></span><!----><!----></a><a href="/Creditos" class="v-btn v-theme--dark text-white v-btn--density-default v-btn--size-default v-btn--variant-outlined mr-4" style="" data-v-64b1facd><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><span class="v-btn__prepend"><i class="mdi-account-group mdi v-icon notranslate v-theme--dark v-icon--size-default" style="" aria-hidden="true"></i></span><span class="v-btn__content" data-no-activator><!--[--><!--[-->Créditos<!--]--><!--]--></span><!----><!----></a><!--]--><!----></div><!--]--><!--[--><!----><!--]--></header><!--[--><nav class="v-navigation-drawer v-navigation-drawer--left v-navigation-drawer--temporary v-theme--dark v-navigation-drawer--mobile sidebar-glass" style="left:0;z-index:904;transform:translateX(-321px);position:absolute;transition:none !important;" inert data-v-64b1facd app><!----><!----><div class="v-navigation-drawer__content"><!--[--><div class="sidebar-header pa-5" data-v-64b1facd><div class="d-flex align-center mb-3" data-v-64b1facd><i class="mdi-book-multiple mdi v-icon notranslate v-theme--dark text-gold mr-3" style="font-size:28px;height:28px;width:28px;" aria-hidden="true" data-v-64b1facd></i><div data-v-64b1facd><div class="font-serif text-gold" style="font-size:0.9rem;letter-spacing:1px;" data-v-64b1facd>TEMARIO</div><div class="text-caption text-grey-lighten-1" data-v-64b1facd>5 Temas</div></div></div><div class="progress-section mt-4" data-v-64b1facd><div class="d-flex justify-space-between align-center mb-2" data-v-64b1facd><span class="text-caption text-grey-lighten-1" data-v-64b1facd>Progreso General</span><span class="text-caption text-gold font-weight-bold" data-v-64b1facd>0%</span></div><div class="progress-track" data-v-64b1facd><div class="progress-fill" style="width:0%;" data-v-64b1facd></div></div><div class="text-caption text-grey mt-1" data-v-64b1facd>0 de 5 completados</div></div></div><hr class="v-divider v-theme--dark border-opacity-25" style="border-style:solid;" aria-orientation="horizontal" role="separator" data-v-64b1facd><!--]--></div><div class="v-navigation-drawer__append"><!--[--><div class="pa-4" data-v-64b1facd><a href="/Welcome" class="v-btn v-btn--block v-theme--dark text-white v-btn--density-default v-btn--size-default v-btn--variant-tonal rounded-pill" style="" data-v-64b1facd><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><span class="v-btn__prepend"><i class="mdi-home mdi v-icon notranslate v-theme--dark v-icon--size-default" style="" aria-hidden="true"></i></span><span class="v-btn__content" data-no-activator><!--[--><!--[-->Ir a Inicio<!--]--><!--]--></span><!----><!----></a></div><!--]--></div></nav><!----><!--]--><main class="v-main dynamic-bg position-relative overflow-hidden" style="--v-layout-left:0px;--v-layout-right:0px;--v-layout-top:0px;--v-layout-bottom:0px;transition:none !important;" data-v-64b1facd><!--[--><div class="floating-shapes" data-v-64b1facd><div class="shape shape-1" data-v-64b1facd></div><div class="shape shape-2" data-v-64b1facd></div><div class="shape shape-3" data-v-64b1facd></div><div class="shape shape-4" data-v-64b1facd></div><div class="shape shape-5" data-v-64b1facd></div></div><div class="v-container v-container--fluid v-locale--is-ltr pa-8 position-relative z-1" style="" data-v-64b1facd><div class="v-row v-row--density-default mb-8" style="" data-v-64b1facd><div class="v-col v-col--cols-md-8 v-col--cols-12 mx-auto text-center" style="" data-v-64b1facd><h1 class="text-h3 font-serif text-white mb-4 slide-fade-in text-glow" data-v-64b1facd>TEMARIO INTERACTIVO</h1><p class="text-subtitle-1 font-serif-italic text-grey-lighten-2 slide-fade-in-delayed" data-v-64b1facd> Explora los derechos fundamentales que protegen tu libertad y dignidad. Haz clic en cada tema para aprender más. </p><hr class="v-divider v-theme--light text-gold mt-6 border-opacity-50" style="border-style:solid;" aria-orientation="horizontal" role="separator" data-v-64b1facd></div></div><div class="v-row justify--center v-row--density-default justify-center" style="" data-v-64b1facd><!--[--><div class="v-col v-col--cols-sm-6 v-col--cols-md-4 v-col--cols-12" style="" data-v-64b1facd><div class="v-card v-theme--light v-card--density-default elevation-0 v-card--variant-elevated rounded-xl h-100 d-flex flex-column hover-card card-animation glass-card" style="animation-delay:0s;" data-v-64b1facd><!----><div class="v-card__loader"><div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top:0;height:0;--v-progress-linear-height:2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100"><!----><div class="v-progress-linear__background" style="opacity:NaN;"></div><div class="v-progress-linear__buffer" style="opacity:NaN;width:0%;"></div><div class="v-progress-linear__indeterminate"><!--[--><div class="v-progress-linear__indeterminate long" style=""></div><div class="v-progress-linear__indeterminate short" style=""></div><!--]--></div><!----></div></div><!----><!----><!--[--><div class="pa-6 text-center text-white font-weight-bold d-flex flex-column align-center justify-center position-relative border-b header-active" data-v-64b1facd><div class="tema-number" data-v-64b1facd>01</div><i class="mdi-book-open-variant mdi v-icon notranslate v-theme--light text-gold mb-2" style="font-size:48px;height:48px;width:48px;opacity:1;" aria-hidden="true" data-v-64b1facd></i><div class="badge-active" data-v-64b1facd>EN PROGRESO</div></div><div class="v-card-text pa-6 flex-grow-1 text-white" style="" data-v-64b1facd><h3 class="text-h5 font-serif text-gold mb-3 line-clamp-2" data-v-64b1facd>Introducción y Conceptos</h3><p class="text-body-2 text-justify text-grey-lighten-2 mb-4" style="line-height:1.6;" data-v-64b1facd>Entiende qué son los derechos fundamentales y la dignidad humana</p></div><hr class="v-divider v-theme--light text-white border-opacity-50" style="border-style:solid;" aria-orientation="horizontal" role="separator" data-v-64b1facd><div class="v-card-actions pa-6 bg-transparent" style="" data-v-64b1facd><a href="/introduccion" class="v-btn v-btn--block v-btn--slim v-theme--light text-gold-btn v-btn--density-default v-btn--size-large v-btn--variant-text font-weight-bold dynamic-btn" style="" data-v-64b1facd><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--> Explorar Tema <!--]--><!--]--></span><span class="v-btn__append"><i class="mdi-arrow-right mdi v-icon notranslate v-theme--light v-icon--size-default" style="" aria-hidden="true"></i></span><!----></a></div><!--]--><!----><!--[--><!----><span class="v-card__underlay"></span><!--]--></div></div><div class="v-col v-col--cols-sm-6 v-col--cols-md-4 v-col--cols-12" style="" data-v-64b1facd><div class="v-card v-theme--light v-card--density-default elevation-0 v-card--variant-elevated rounded-xl h-100 d-flex flex-column hover-card card-animation glass-card locked-card" style="animation-delay:0.2s;" data-v-64b1facd><!----><div class="v-card__loader"><div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top:0;height:0;--v-progress-linear-height:2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100"><!----><div class="v-progress-linear__background" style="opacity:NaN;"></div><div class="v-progress-linear__buffer" style="opacity:NaN;width:0%;"></div><div class="v-progress-linear__indeterminate"><!--[--><div class="v-progress-linear__indeterminate long" style=""></div><div class="v-progress-linear__indeterminate short" style=""></div><!--]--></div><!----></div></div><!----><!----><!--[--><div class="pa-6 text-center text-white font-weight-bold d-flex flex-column align-center justify-center position-relative border-b header-locked" data-v-64b1facd><div class="tema-number" data-v-64b1facd>02</div><i class="mdi-lock mdi v-icon notranslate v-theme--light mb-2 position-absolute" style="font-size:48px;height:48px;width:48px;opacity:0.3;" aria-hidden="true" data-v-64b1facd></i><div class="badge-locked" data-v-64b1facd>🔒 Bloqueado</div></div><div class="v-card-text pa-6 flex-grow-1 text-white" style="" data-v-64b1facd><h3 class="text-h5 font-serif text-gold mb-3 line-clamp-2" data-v-64b1facd>Derechos de 1ª Generación</h3><p class="text-body-2 text-justify text-grey-lighten-2 mb-4" style="line-height:1.6;" data-v-64b1facd>Libertades civiles y políticas fundamentales</p></div><hr class="v-divider v-theme--light text-white border-opacity-50" style="border-style:solid;" aria-orientation="horizontal" role="separator" data-v-64b1facd><div class="v-card-actions pa-6 bg-transparent" style="" data-v-64b1facd><a href="/introduccion" aria-disabled="true" class="v-btn v-btn--block v-btn--disabled v-btn--slim v-theme--light text-gold-btn v-btn--density-default v-btn--size-large v-btn--variant-text font-weight-bold dynamic-btn" style="" data-v-64b1facd><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--> Explorar Tema <!--]--><!--]--></span><span class="v-btn__append"><i class="mdi-arrow-right mdi v-icon notranslate v-theme--light v-icon--size-default" style="" aria-hidden="true"></i></span><!----></a></div><!--]--><!----><!--[--><!----><span class="v-card__underlay"></span><!--]--></div></div><div class="v-col v-col--cols-sm-6 v-col--cols-md-4 v-col--cols-12" style="" data-v-64b1facd><div class="v-card v-theme--light v-card--density-default elevation-0 v-card--variant-elevated rounded-xl h-100 d-flex flex-column hover-card card-animation glass-card locked-card" style="animation-delay:0.4s;" data-v-64b1facd><!----><div class="v-card__loader"><div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top:0;height:0;--v-progress-linear-height:2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100"><!----><div class="v-progress-linear__background" style="opacity:NaN;"></div><div class="v-progress-linear__buffer" style="opacity:NaN;width:0%;"></div><div class="v-progress-linear__indeterminate"><!--[--><div class="v-progress-linear__indeterminate long" style=""></div><div class="v-progress-linear__indeterminate short" style=""></div><!--]--></div><!----></div></div><!----><!----><!--[--><div class="pa-6 text-center text-white font-weight-bold d-flex flex-column align-center justify-center position-relative border-b header-locked" data-v-64b1facd><div class="tema-number" data-v-64b1facd>03</div><i class="mdi-lock mdi v-icon notranslate v-theme--light mb-2 position-absolute" style="font-size:48px;height:48px;width:48px;opacity:0.3;" aria-hidden="true" data-v-64b1facd></i><div class="badge-locked" data-v-64b1facd>🔒 Bloqueado</div></div><div class="v-card-text pa-6 flex-grow-1 text-white" style="" data-v-64b1facd><h3 class="text-h5 font-serif text-gold mb-3 line-clamp-2" data-v-64b1facd>Derechos de 2ª Generación</h3><p class="text-body-2 text-justify text-grey-lighten-2 mb-4" style="line-height:1.6;" data-v-64b1facd>Igualdad de oportunidades y justicia social integral</p></div><hr class="v-divider v-theme--light text-white border-opacity-50" style="border-style:solid;" aria-orientation="horizontal" role="separator" data-v-64b1facd><div class="v-card-actions pa-6 bg-transparent" style="" data-v-64b1facd><a href="/introduccion" aria-disabled="true" class="v-btn v-btn--block v-btn--disabled v-btn--slim v-theme--light text-gold-btn v-btn--density-default v-btn--size-large v-btn--variant-text font-weight-bold dynamic-btn" style="" data-v-64b1facd><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--> Explorar Tema <!--]--><!--]--></span><span class="v-btn__append"><i class="mdi-arrow-right mdi v-icon notranslate v-theme--light v-icon--size-default" style="" aria-hidden="true"></i></span><!----></a></div><!--]--><!----><!--[--><!----><span class="v-card__underlay"></span><!--]--></div></div><div class="v-col v-col--cols-sm-6 v-col--cols-md-4 v-col--cols-12" style="" data-v-64b1facd><div class="v-card v-theme--light v-card--density-default elevation-0 v-card--variant-elevated rounded-xl h-100 d-flex flex-column hover-card card-animation glass-card locked-card" style="animation-delay:0.6000000000000001s;" data-v-64b1facd><!----><div class="v-card__loader"><div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top:0;height:0;--v-progress-linear-height:2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100"><!----><div class="v-progress-linear__background" style="opacity:NaN;"></div><div class="v-progress-linear__buffer" style="opacity:NaN;width:0%;"></div><div class="v-progress-linear__indeterminate"><!--[--><div class="v-progress-linear__indeterminate long" style=""></div><div class="v-progress-linear__indeterminate short" style=""></div><!--]--></div><!----></div></div><!----><!----><!--[--><div class="pa-6 text-center text-white font-weight-bold d-flex flex-column align-center justify-center position-relative border-b header-locked" data-v-64b1facd><div class="tema-number" data-v-64b1facd>04</div><i class="mdi-lock mdi v-icon notranslate v-theme--light mb-2 position-absolute" style="font-size:48px;height:48px;width:48px;opacity:0.3;" aria-hidden="true" data-v-64b1facd></i><div class="badge-locked" data-v-64b1facd>🔒 Bloqueado</div></div><div class="v-card-text pa-6 flex-grow-1 text-white" style="" data-v-64b1facd><h3 class="text-h5 font-serif text-gold mb-3 line-clamp-2" data-v-64b1facd>Derechos de 3ª Generación</h3><p class="text-body-2 text-justify text-grey-lighten-2 mb-4" style="line-height:1.6;" data-v-64b1facd>Solidaridad, paz y medio ambiente sano colectivo</p></div><hr class="v-divider v-theme--light text-white border-opacity-50" style="border-style:solid;" aria-orientation="horizontal" role="separator" data-v-64b1facd><div class="v-card-actions pa-6 bg-transparent" style="" data-v-64b1facd><a href="/introduccion" aria-disabled="true" class="v-btn v-btn--block v-btn--disabled v-btn--slim v-theme--light text-gold-btn v-btn--density-default v-btn--size-large v-btn--variant-text font-weight-bold dynamic-btn" style="" data-v-64b1facd><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--> Explorar Tema <!--]--><!--]--></span><span class="v-btn__append"><i class="mdi-arrow-right mdi v-icon notranslate v-theme--light v-icon--size-default" style="" aria-hidden="true"></i></span><!----></a></div><!--]--><!----><!--[--><!----><span class="v-card__underlay"></span><!--]--></div></div><div class="v-col v-col--cols-sm-6 v-col--cols-md-4 v-col--cols-12" style="" data-v-64b1facd><div class="v-card v-theme--light v-card--density-default elevation-0 v-card--variant-elevated rounded-xl h-100 d-flex flex-column hover-card card-animation glass-card locked-card" style="animation-delay:0.8s;" data-v-64b1facd><!----><div class="v-card__loader"><div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top:0;height:0;--v-progress-linear-height:2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100"><!----><div class="v-progress-linear__background" style="opacity:NaN;"></div><div class="v-progress-linear__buffer" style="opacity:NaN;width:0%;"></div><div class="v-progress-linear__indeterminate"><!--[--><div class="v-progress-linear__indeterminate long" style=""></div><div class="v-progress-linear__indeterminate short" style=""></div><!--]--></div><!----></div></div><!----><!----><!--[--><div class="pa-6 text-center text-white font-weight-bold d-flex flex-column align-center justify-center position-relative border-b header-locked" data-v-64b1facd><div class="tema-number" data-v-64b1facd>05</div><i class="mdi-lock mdi v-icon notranslate v-theme--light mb-2 position-absolute" style="font-size:48px;height:48px;width:48px;opacity:0.3;" aria-hidden="true" data-v-64b1facd></i><div class="badge-locked" data-v-64b1facd>🔒 Bloqueado</div></div><div class="v-card-text pa-6 flex-grow-1 text-white" style="" data-v-64b1facd><h3 class="text-h5 font-serif text-gold mb-3 line-clamp-2" data-v-64b1facd>Garantías y Tutela</h3><p class="text-body-2 text-justify text-grey-lighten-2 mb-4" style="line-height:1.6;" data-v-64b1facd>Mecanismos para defender tus derechos de forma inmediata</p></div><hr class="v-divider v-theme--light text-white border-opacity-50" style="border-style:solid;" aria-orientation="horizontal" role="separator" data-v-64b1facd><div class="v-card-actions pa-6 bg-transparent" style="" data-v-64b1facd><a href="/introduccion" aria-disabled="true" class="v-btn v-btn--block v-btn--disabled v-btn--slim v-theme--light text-gold-btn v-btn--density-default v-btn--size-large v-btn--variant-text font-weight-bold dynamic-btn" style="" data-v-64b1facd><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--> Explorar Tema <!--]--><!--]--></span><span class="v-btn__append"><i class="mdi-arrow-right mdi v-icon notranslate v-theme--light v-icon--size-default" style="" aria-hidden="true"></i></span><!----></a></div><!--]--><!----><!--[--><!----><span class="v-card__underlay"></span><!--]--></div></div><!--]--></div></div><!--]--></main><!--]--></div></div><footer class="footer-section" data-v-3dffaee9><div class="v-container v-container--fluid v-locale--is-ltr pa-0" style="" data-v-3dffaee9><div class="v-row v-row--density-default ma-0" style="" data-v-3dffaee9><div class="v-col v-col--cols-md-5 v-col--cols-12 footer-left pa-8" style="" data-v-3dffaee9><div class="d-flex flex-column align-center text-center mb-6" data-v-3dffaee9><div class="escudo-wrapper mb-6" data-v-3dffaee9><img src="/images/logo_unicor.png" alt="Escudo Universidad de Córdoba" class="escudo-img-direct" data-v-3dffaee9></div><h3 class="font-serif text-h6 text-gold mb-3" data-v-3dffaee9>Universidad de Córdoba</h3><p class="text-caption text-grey-lighten-2" data-v-3dffaee9>Montería, Colombia</p></div><hr class="v-divider v-theme--light my-4 border-opacity-25" style="border-style:solid;" aria-orientation="horizontal" role="separator" data-v-3dffaee9><div class="contact-info mt-6" data-v-3dffaee9><div class="contact-item mb-4" data-v-3dffaee9><i class="mdi-phone mdi v-icon notranslate v-theme--light text-gold mr-2" style="font-size:20px;height:20px;width:20px;" aria-hidden="true" data-v-3dffaee9></i><span class="text-body-2 text-grey-lighten-1" data-v-3dffaee9>(+57) 5 784 0123</span></div><div class="contact-item mb-4" data-v-3dffaee9><i class="mdi-email mdi v-icon notranslate v-theme--light text-gold mr-2" style="font-size:20px;height:20px;width:20px;" aria-hidden="true" data-v-3dffaee9></i><span class="text-body-2 text-grey-lighten-1" data-v-3dffaee9>info@unicordoba.edu.co</span></div><div class="contact-item" data-v-3dffaee9><i class="mdi-map-marker mdi v-icon notranslate v-theme--light text-gold mr-2" style="font-size:20px;height:20px;width:20px;" aria-hidden="true" data-v-3dffaee9></i><span class="text-body-2 text-grey-lighten-1" data-v-3dffaee9>Carrera 6ª No. 76-103, Montería</span></div></div></div><div class="v-col v-col--cols-md-1 v-col--cols-12 d-flex align-center justify-center pa-0" style="" data-v-3dffaee9><hr class="v-divider v-divider--vertical v-theme--light border-opacity-25 my-8" style="border-style:solid;height:80%;" aria-orientation="vertical" role="separator" data-v-3dffaee9></div><div class="v-col v-col--cols-md-3 v-col--cols-12 footer-center pa-8" style="" data-v-3dffaee9><h4 class="font-serif text-subtitle-1 text-gold mb-6" data-v-3dffaee9>Sobre este OVA</h4><p class="text-body-2 text-grey-lighten-2 mb-4" style="line-height:1.6;" data-v-3dffaee9> Objeto Virtual de Aprendizaje para la comprensión de los Derechos Fundamentales consagrados en la Constitución Política de Colombia de 1991. </p><span class="v-chip v-theme--light text-gold v-chip--density-default v-chip--size-small v-chip--variant-outlined mb-4" style="" draggable="false" data-v-3dffaee9><!--[--><!----><span class="v-chip__underlay"></span><!--]--><!----><div class="v-chip__prepend"><!--[--><i class="mdi-school mdi v-icon notranslate v-theme--light v-icon--size-default v-icon--start" style="" aria-hidden="true"></i><!----><!--]--></div><div class="v-chip__content" data-no-activator><!--[--> Educación Interactiva <!--]--></div><!----><!----></span></div><div class="v-col v-col--cols-md-3 v-col--cols-12 footer-right pa-8" style="" data-v-3dffaee9><h4 class="font-serif text-subtitle-1 text-gold mb-6" data-v-3dffaee9>Enlaces Rápidos</h4><div class="quick-links" data-v-3dffaee9><a href="/Welcome" class="v-btn v-theme--light text-grey-lighten-2 v-btn--density-default v-btn--size-small v-btn--variant-text footer-link mb-2" style="" data-v-3dffaee9><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><span class="v-btn__prepend"><i class="mdi-home mdi v-icon notranslate v-theme--light v-icon--size-default" style="" aria-hidden="true"></i></span><span class="v-btn__content" data-no-activator><!--[--><!--[--> Inicio <!--]--><!--]--></span><!----><!----></a><a href="/Temario" aria-current="page" class="v-btn v-btn--active v-theme--light text-grey-lighten-2 v-btn--density-default v-btn--size-small v-btn--variant-text footer-link mb-2" style="" data-v-3dffaee9><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><span class="v-btn__prepend"><i class="mdi-book-open-variant mdi v-icon notranslate v-theme--light v-icon--size-default" style="" aria-hidden="true"></i></span><span class="v-btn__content" data-no-activator><!--[--><!--[--> Temario <!--]--><!--]--></span><!----><!----></a><a href="/Evaluacion" class="v-btn v-theme--light text-grey-lighten-2 v-btn--density-default v-btn--size-small v-btn--variant-text footer-link mb-2" style="" data-v-3dffaee9><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><span class="v-btn__prepend"><i class="mdi-pencil-box-outline mdi v-icon notranslate v-theme--light v-icon--size-default" style="" aria-hidden="true"></i></span><span class="v-btn__content" data-no-activator><!--[--><!--[--> Evaluación <!--]--><!--]--></span><!----><!----></a><a href="/Recursos" class="v-btn v-theme--light text-grey-lighten-2 v-btn--density-default v-btn--size-small v-btn--variant-text footer-link mb-2" style="" data-v-3dffaee9><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><span class="v-btn__prepend"><i class="mdi-link-variant mdi v-icon notranslate v-theme--light v-icon--size-default" style="" aria-hidden="true"></i></span><span class="v-btn__content" data-no-activator><!--[--><!--[--> Recursos <!--]--><!--]--></span><!----><!----></a><a href="/Actividades" class="v-btn v-theme--light text-grey-lighten-2 v-btn--density-default v-btn--size-small v-btn--variant-text footer-link mb-2" style="" data-v-3dffaee9><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><span class="v-btn__prepend"><i class="mdi-controller-classic mdi v-icon notranslate v-theme--light v-icon--size-default" style="" aria-hidden="true"></i></span><span class="v-btn__content" data-no-activator><!--[--><!--[--> Actividades <!--]--><!--]--></span><!----><!----></a><a href="/Creditos" class="v-btn v-theme--light text-grey-lighten-2 v-btn--density-default v-btn--size-small v-btn--variant-text footer-link" style="" data-v-3dffaee9><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><span class="v-btn__prepend"><i class="mdi-account-group mdi v-icon notranslate v-theme--light v-icon--size-default" style="" aria-hidden="true"></i></span><span class="v-btn__content" data-no-activator><!--[--><!--[--> Créditos <!--]--><!--]--></span><!----><!----></a></div></div></div><hr class="v-divider v-theme--light border-opacity-20" style="border-style:solid;" aria-orientation="horizontal" role="separator" data-v-3dffaee9><div class="v-row v-row--density-default ma-0 copyright-section pa-6 text-center" style="" data-v-3dffaee9><div class="v-col v-col--cols-12" style="" data-v-3dffaee9><p class="text-caption text-grey mb-2" data-v-3dffaee9> © 2026 Universidad de Córdoba. Todos los derechos reservados. </p><p class="text-caption text-grey-lighten-1" data-v-3dffaee9> Desarrollado con <i class="mdi-heart mdi v-icon notranslate v-theme--light text-red-accent-3 mx-1" style="font-size:14px;height:14px;width:14px;" aria-hidden="true" data-v-3dffaee9></i> para la educación en Derechos Fundamentales </p></div></div></div></footer><!--]--></div></div></div><div id="teleports"></div><script>window.__NUXT__={};window.__NUXT__.config={public:{},app:{baseURL:"/",buildId:"4669a70a-13cc-4264-9161-2dd5a3fcb6be",buildAssetsDir:"/_nuxt/",cdnURL:""}}</script><script type="application/json" data-nuxt-data="nuxt-app" data-ssr="true" id="__NUXT_DATA__" data-src="/Temario/_payload.json?4669a70a-13cc-4264-9161-2dd5a3fcb6be">[{"state":1,"once":4,"_errors":5,"serverRendered":7,"path":8,"prerenderedAt":9},["Reactive",2],{"$smaxTemaDesbloqueado":3},1,["Set"],["ShallowReactive",6],{},true,"\u002FTemario",1780183692600]</script></body></html>
